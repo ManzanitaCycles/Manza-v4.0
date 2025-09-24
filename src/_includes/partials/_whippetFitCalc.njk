@@ -1,0 +1,48 @@
+<form id="frameFitCalc" class="stack-1 card">
+    <div>
+        <label for="user_handlebar_stack">Enter your handlebar stack (mm)</label>
+        <input type="number" id="user_handlebar_stack" placeholder="e.g. 690">
+        <span class="error-message">Please enter a number between 540 and 775.</span>
+    </div>
+    <div>
+        <label for="user_handlebar_reach">Enter your handlebar reach (mm)</label>
+        <input type="number" id="user_handlebar_reach" placeholder="e.g. 465">
+        <span class="error-message">Please enter a number between 375 and 520.</span>
+    </div>
+    <div>
+        <button type="submit" class="button">Calculate</button>
+        <button type="button" class="button button--clear">Clear</button>
+    </div>
+</form>
+<dialog id="frameFitCalc__modal" class="modal">
+    <div class="modal__content card wrap stack-1">
+        <button class="close-btn" aria-label="Close dialog">{% include "partials/_close-btn.njk" %}</button>
+        <h3 class="mt-0">Results</h3>
+        <div class="card flow">
+            <h3>Best match</h3>
+            <dl class="dl--fw-switch">
+                <dt>Frame size</dt>
+                <dd id="best-frame-size"></dd>
+                <dt>Stem length</dt>
+                <dd id="best-stem-length"></dd>
+                <dt>Stem angle</dt>
+                <dd id="best-stem-angle"></dd>
+                <dt>Spacer stack</dt>
+                <dd id="best-spacer-stack"></dd>
+            </dl>
+        </div>
+        <div class="card flow">
+            <h3>Best match with negative stem</h3>
+            <dl class="dl--fw-switch">
+                <dt>Frame size</dt>
+                <dd id="neg-stem-frame-size"></dd>
+                <dt>Stem length</dt>
+                <dd id="neg-stem-length"></dd>
+                <dt>Stem angle</dt>
+                <dd id="neg-stem-angle"></dd>
+                <dt>Spacer stack</dt>
+                <dd id="neg-stem-spacer-stack"></dd>
+            </dl>
+        </div>
+    </div>
+</dialog>

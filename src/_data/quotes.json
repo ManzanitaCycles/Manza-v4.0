@@ -1,0 +1,109 @@
+[
+    {
+        "name": "Kevin B.",
+        "img": "/assets/img/kevin-quote.jpg",
+        "alt": "Kevin B. shows off his new Manzanita hardtail.",
+        "text": "The short story is in my 30 years of mountain biking this is the best bike I've ever owned.",
+        "category": "Manifesto"
+    },
+    {
+        "name": "Amiel S.",
+        "img": "/assets/img/amiel-quote.jpg",
+        "alt": "Amiel riding his hardtail in California",
+        "text": "The bike is sooo comfortable! It's the most compliant hardtail that I've ever ridden.",
+        "category": "Manifesto"
+    },
+    {
+        "name": "Carlos B.",
+        "img": "/assets/img/carlos-quote.jpg",
+        "alt": "Carlos riding his hardtail in the Alps.",
+        "text": "The final feeling when you get to ride the bike is pure satisfaction...",
+        "category": "Manifesto"
+    },
+    {
+        "name": "Max E.",
+        "img": "/assets/img/max-quote.jpg",
+        "alt": "Yellow gravel bike viewing San Francisco fog.",
+        "text": "Nick was able to deliver hands down the most fun drop bar bike I've ever ridden.",
+        "category": "Custom"
+    },
+    {
+        "name": "Gavin B.",
+        "img": "/assets/img/gavinb-quote.jpg",
+        "alt": "Max carves a corner on his gravel bike.",
+        "text": "The bike is comfortable - back tightness that plagued me in the past has disappeared and the bike handles great!",
+        "category": "Custom"
+    },
+    {
+        "name": "Charlie P.",
+        "img": "/assets/img/charlie-quote.jpg",
+        "alt": "Charlie's new hardtail.",
+        "text": "The bike has been a dream since I received it a couple months ago and would recommend him to anyone who will listen!",
+        "category": "Manifesto"
+    },
+    {
+        "name": "Elliot",
+        "img": "/assets/img/elliot.jpg",
+        "alt": "Elliot riding his Manzanita to a 7th place finish at the 2025 Stetina's Paydirt.",
+        "results": [
+            {
+                "place": "7th",
+                "race": "2025 Stetina's Paydirt - Men pro"
+            },
+            {
+                "place": "2nd",
+                "race": "2025 Ruby Roubaix - Men pro"
+            },
+            {
+                "place": "9th",
+                "race": "2025 Grinduro - Men 31-40"
+            }
+        ],
+        "category": "Whippet"
+    },
+    {
+        "name": "Miguel",
+        "img": "/assets/img/miguel.jpg",
+        "alt": "Miguel riding to a 10th place finish at the 2025 Lost and Found Gravel Race.",
+        "results": [
+            {
+                "place": "10th",
+                "race": "2025 Lost and Found - Men 31-40"
+            }
+        ],
+        "category": "Whippet"
+    },
+    {
+        "name": "Ward",
+        "img": "/assets/img/ward-quote.jpg",
+        "alt": "Ward's Whippet on a training ride in Washington.",
+        "results": [
+            {
+                "place": "1st",
+                "race": "2025 Fondo Leavenworth - Men 60+"
+            }
+        ],
+        "category": "Whippet"
+    },
+    {
+        "name": "Andrew N.",
+        "img": "/assets/img/ultralight-singlespeed-hardtail.jpg",
+        "alt": "Ultralight steel singlespeed hardtail",
+        "text": "I can say without hesitation it handles and feels better than any bike I've had before.",
+        "category": "Custom"
+    },
+    {
+        "name": "McCord B.",
+        "img": "/assets/img/mccord-quote.jpg",
+        "alt": "Ultralight steel singlespeed hardtail",
+        "text": "My new Manzanita is not only prettier than I could have ever imagined, but also rides like a dream!",
+        "category": "Custom"
+    },
+    {
+        "name": "Collin W.",
+        "img": "/assets/img/collin-quote.jpg",
+        "alt": "Collin rides down a granite slab on his hardcore hardtail.",
+        "text": "The only drawback to ordering a Manzanita is that you will soon want a stable of them.",
+        "category": "Manifesto"
+    }
+]

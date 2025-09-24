@@ -1,0 +1,33 @@
+<form id="contact-form" class="stack-1" action="https://usebasin.com/f/319261c18814" method="POST">
+    <!-- Honeypot field -->
+    <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off" />
+    <input type="hidden" name="formStart" />
+
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name" />
+        <span class="error-message">Please enter your name.</span>
+    </div>
+
+    <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required autocomplete="email" />
+        <span class="error-message">Please enter a valid email address.</span>
+    </div>
+
+    <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+        <span class="error-message">Please enter a message.</span>
+    </div>
+
+    <button type="submit" class="button">Send email</button>
+</form>
+
+<dialog id="contact-modal" class="modal">
+    <div class="modal__content flow card">
+        <button class="close-btn" aria-label="Close dialog">{% include "partials/_close-btn.njk" %}</button>
+        <p>✅ <strong>Message sent.</strong></p>
+        <p>You should receive a response within 48 hours.</p>
+    </div>
+</dialog>

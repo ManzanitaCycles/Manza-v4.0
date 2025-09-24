@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {% set pageTitle = metaTitle or title %}
+    {% set siteTitle = site.name %}
+    {% set currentUrl = (site.url + page.url) | lower %}
+    {% set metaDesc = metaDesc or summary or site.description %}
+
+    <title>{% if pageTitle != siteTitle %}{{ pageTitle }} | {% endif %}{{ siteTitle }}</title>
+
+    <link rel="canonical" href="{{ currentUrl }}" />
+    <meta name="description" content="{{ metaDesc }}" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#000000" />
+    <meta name="msapplication-TileColor" content="#00aba9" />
+
+    <!-- capture the CSS content as a Nunjucks variable -->
+    {% set css %} {% include "a.css" %} {% endset %}
+    <!-- feed it through our cssmin filter to minify -->
+    <style>
+        {{ css | cssmin | safe }}
+    </style>
+</head>
+
+<body>
+    <header class="nav full-width">
+        <a href="/" class="nav__logo" aria-label="Manzanita Cycles homepage">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 100 100" aria-hidden="true">
+                <path fill="currentColor" d="M16.548 87.149c1.225-.007 2.56-.018 4.002-.035 8.372-.098 13.101-.197 14.184-.295v-7.191c-5.811-1.773-8.767-5.22-8.767-10.342V38.653L47.44 69.976l20.882-27.875-.001 26.594c.001 6.008-4.136 10.736-10.145 11.229v7.092c1.379.098 7.585.197 18.518.098 2.556-.023 4.848-.046 6.874-.07C74.692 95.093 62.914 100 50 100c-12.858 0-24.59-4.864-33.452-12.852zM8.035 22.822c5.099.343 7.689 3.881 7.689 10.612v9.948l-7.092 7.092 7.092 7.191v11.918c0 4.511-2.665 7.862-6.686 9.083A49.753 49.753 0 0 1 0 50.001a49.74 49.74 0 0 1 8.035-27.179zm84.548.977A49.733 49.733 0 0 1 100 50.001a49.753 49.753 0 0 1-8.77 28.279c-3.373-1.807-5.08-4.823-5.08-9.091V58.058l7.19-7.683-7.19-7.387V31.267c0-4.076 2.527-7.194 6.433-7.468zm-77.501-9.572C24.097 5.427 36.42.001 50 .001c13.58 0 25.903 5.426 34.918 14.226H72.951L51.478 45.648l-20.29-31.421H15.082z" />
+            </svg>
+        </a>
+        <nav>
+            <ul class="nav__list">
+                <li>
+                    <button class="nav__button">Bikes</button>
+                    <ul class="nav__dropdown flow" hidden>
+                        <li><a href="/bikes/whippet/">Whippet<span>Racy gravel</span></a></li>
+                        <li><a href="/bikes/manifesto/">Manifesto<span>Fun-loving hardtail</span></a></li>
+                        <li><a href="/bikes/custom/">Custom<span>One-of-a-kind</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {{ content | safe }}
+    </main>
+    {% include "partials/_footer.njk" %}
+    {% if page.url == "/bikes/whippet/" %}
+    <script src="/assets/js/whippet.min.js" defer></script>
+    {% else %}
+    <script src="/assets/js/common.min.js" defer></script>
+    {% endif %}
+</body>
+
+</html>

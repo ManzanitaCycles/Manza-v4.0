@@ -1,0 +1,676 @@
+/*!
+ * GLOBAL STYLES & CSS RESET
+ */
+
+:root {
+    --fs-body: clamp(1rem, 0.8977rem + 0.4545vw, 1.25rem);
+    --fs-h1: clamp(1.875rem, 1.3636rem + 2.2727vw, 3.125rem);
+    --fs-small: clamp(0.75rem, 0.6733rem + 0.3409vw, 0.9375rem);
+    --fs-h2: clamp(1.25rem, 0.9943rem + 1.1364vw, 1.875rem);
+    --fs-h3: clamp(1.125rem, 0.9716rem + 0.6818vw, 1.5rem);
+    --ratio: 1.5;
+    --s-1: calc(var(--s0) / var(--ratio));
+    --s0: 1rem;
+    --s1: calc(var(--s0) * var(--ratio));
+    --s3: calc(var(--s0) * pow(var(--ratio), 3));
+    --s5: calc(var(--s0) * pow(var(--ratio), 5));
+    /* Expand spacing as screen size increases */
+    --s1-s3: clamp(var(--s1), 0.733rem + 3.4091vw, var(--s3));
+    --s3-s5: clamp(var(--s3), 1.6491rem + 7.6705vw, var(--s5));
+    /* Main palette */
+    color-scheme: light dark;
+    --c-light: #eeebe6;
+    --c-lighter: #f8f5f0;
+    --c-lightest: #fdfaf7;
+    --c-darkish: #7b7873;
+    --c-dark: #66625d;
+    --c-darker: #3a3732;
+    --c-darkest: #130e0e;
+    /* Accent & Error Colors */
+    --c-accent: #e4a282;
+    --c-error: #b6524c;
+    --c-error-light: #ff9d99;
+    --c-button: #39b5b2;
+    /* Border styles */
+    --border-radius: 10px;
+    --border: 3px solid light-dark(var(--c-light), var(--c-darkish));
+    /* Legible text */
+    --prose: min(55ch, 100%);
+    --kerning: .05em;
+}
+
+/* Box sizing rules, reset margins & padding, and inherit color */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+}
+
+/* Set core body defaults */
+body {
+    background: light-dark(var(--c-lighter), var(--c-darker));
+    color: light-dark(var(--c-darker), var(--c-lightest));
+    margin: var(--s0);
+    font: var(--fs-body)/var(--ratio) system-ui, sans-serif;
+}
+
+address {
+    font-style: normal;
+}
+
+button,
+summary,
+label {
+    cursor: pointer;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+.h2,
+h3,
+.h3 {
+    font-weight: 900;
+    text-wrap: balance;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2,
+.h2 {
+    font-size: var(--fs-h2);
+}
+
+h3,
+.h3 {
+    font-size: var(--fs-h3);
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius);
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+ul,
+ol,
+summary {
+    list-style: none;
+}
+
+/* Make description lists two columns */
+dl {
+    display: grid;
+    gap: var(--s1);
+    grid-template-columns: max-content 1fr;
+}
+
+/* Make DT stand out */
+dt {
+    font-weight: 700;
+}
+
+/* Start in second column */
+dd {
+    grid-column-start: 2;
+}
+
+footer {
+    border-top: var(--border);
+    padding-block-start: var(--s3);
+    margin-block-start: var(--s3-s5);
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: var(--s3);
+    flex-wrap: wrap;
+}
+
+/* Make details summary element stand out */
+summary {
+    font-weight: 700;
+}
+
+/*
+ * COMPONENTS
+ */
+
+/* Accordion Component */
+.accordion {
+    border-radius: var(--border-radius);
+    border: var(--border);
+    background: light-dark(var(--c-lightest), var(--c-dark));
+}
+
+.accordion details {
+    padding: var(--s1);
+}
+
+.accordion>*+* {
+    border-top: var(--border);
+}
+
+.accordion summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s0);
+}
+
+.accordion summary::after {
+    content: '+';
+    font-weight: 900;
+    color: var(--c-accent);
+}
+
+.accordion details[open] summary::after {
+    content: '–';
+}
+
+.accordion details div {
+    margin-block-start: var(--s1);
+}
+
+/* Button Component */
+.button {
+    border: none;
+    padding: var(--s0) var(--s1);
+    background: var(--c-button);
+    color: var(--c-darkest);
+    font-size: var(--fs-small);
+    font-weight: 900;
+    letter-spacing: var(--kerning);
+    transition: .15s;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    box-shadow: .5px 1px 1px hsl(180, 10%, 40%);
+    text-transform: uppercase;
+}
+
+.button--clear {
+    background: transparent;
+    color: light-dark(var(--c-darker), var(--c-lightest));
+    box-shadow: none;
+}
+
+.button--disabled {
+    background-color: light-dark(var(--c-lightest), var(--c-darkish));
+    color: light-dark(var(--c-darkish), var(--c-light));
+    box-shadow: none;
+    width: fit-content;
+    border: var(--border);
+}
+
+/* Card Component */
+.card {
+    border: var(--border);
+    padding: var(--s1);
+    background: light-dark(var(--c-lightest), var(--c-dark));
+    border-radius: var(--border-radius);
+}
+
+/* Component Category */
+.component-category fieldset {
+    border: none;
+}
+
+.component-category label {
+    display: flex;
+    align-items: center;
+    gap: var(--s-1);
+    text-transform: capitalize;
+    color: light-dark(var(--c-darker), var(--c-lightest));
+    line-height: calc(var(--ratio)*1.5);
+}
+
+.component-category input[type="radio"] {
+    width: 1em;
+    height: 1em;
+    accent-color: var(--c-accent);
+}
+
+/* Description List Dark Modifier */
+.dl--fw-switch dt {
+    font-weight: 400;
+}
+
+.dl--fw-switch dd {
+    font-weight: 700;
+}
+
+/* Form Elements */
+
+/* Limit width of all forms */
+form {
+    width: var(--prose);
+}
+
+input,
+textarea {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: var(--s0) var(--s1);
+    width: 100%;
+    background: light-dark(var(--c-lightest), var(--c-dark));
+}
+
+input:focus,
+textarea:focus {
+    outline: .2rem solid var(--c-accent);
+}
+
+input[type="radio"]:focus {
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--c-darkish);
+}
+
+label {
+    font-size: var(--fs-small);
+    color: light-dark(var(--c-dark), var(--c-lighter));
+    font-weight: 700;
+    letter-spacing: var(--kerning);
+}
+
+/* Highlight */
+.highlight {
+    position: relative;
+    display: inline-block;
+    font-style: italic;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 0.5em;
+    background: var(--c-accent);
+    left: -5%;
+    bottom: -0.05em;
+    border-radius: 3px;
+    z-index: -1;
+    transform: skewX(-12deg);
+    transform-origin: bottom left;
+}
+
+/* List Components */
+.list li {
+    display: flex;
+}
+
+.list li::before {
+    content: '•';
+    color: var(--c-accent);
+    margin-inline-end: var(--s0);
+    display: inline-block;
+    font-weight: 900;
+}
+
+.ol {
+    counter-reset: my-counter;
+}
+
+.ol li {
+    counter-increment: my-counter;
+}
+
+.ol li::before {
+    content: counter(my-counter);
+    font-weight: 700;
+}
+
+/* Modal */
+.modal {
+    margin: auto;
+    border: none;
+    background: transparent;
+}
+
+.modal__content {
+    border-color: var(--c-darker);
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: var(--c-accent);
+}
+
+.close-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Nav */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: var(--fs-small);
+    letter-spacing: var(--kerning);
+    margin-block-end: var(--s3);
+    flex-wrap: wrap;
+}
+
+.nav__list {
+    display: flex;
+    gap: var(--s1);
+    position: relative;
+}
+
+.nav__list a {
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.nav__logo {
+    line-height: 0;
+}
+
+.nav__button {
+    background: none;
+    border: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: var(--kerning);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25ch;
+}
+
+.nav__button::after {
+    content: '\25BC';
+    font-size: .75em;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease-in-out;
+    color: var(--c-accent);
+}
+
+.nav__button--expanded::after {
+    transform: rotate(180deg);
+}
+
+.nav__dropdown {
+    position: absolute;
+    top: var(--s0);
+    left: calc(-1 * var(--s1));
+    padding: var(--s1);
+    background: light-dark(var(--c-lightest), var(--c-dark));
+    border: var(--border);
+    border-radius: var(--border-radius);
+    border-color: light-dark(var(--c-darker), var(--c-darkish));
+    z-index: 10;
+    margin-block-start: var(--s1);
+    box-shadow: 1px 1px 3px hsl(200, 0%, 20%);
+}
+
+.nav__dropdown span {
+    font-size: var(--fs-small);
+    color: light-dark(var(--c-dark), var(--c-light));
+    font-weight: 300;
+    display: block;
+    text-transform: initial;
+}
+
+/* Quote */
+.quote,
+.quote figcaption {
+    display: flex;
+    flex-direction: column;
+}
+
+.quote figcaption {
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Table */
+table {
+    border-spacing: 0;
+    text-align: left;
+    width: 100%;
+    border: var(--border);
+    border-color: var(--c-accent);
+    font-size: var(--fs-small);
+    white-space: nowrap;
+    border-radius: var(--border-radius);
+}
+
+/* Fixes border radius in bottom left corner of table */
+tbody tr:last-of-type>th {
+    border-bottom-left-radius: var(--border-radius);
+}
+
+th,
+td {
+    padding: var(--s-1);
+}
+
+thead th {
+    background: var(--c-accent);
+    color: var(--c-darker);
+}
+
+tbody tr:nth-child(even) th {
+    background: light-dark(var(--c-light), var(--c-dark));
+}
+
+tbody tr:nth-child(odd) th {
+    background: light-dark(var(--c-lightest), var(--c-darker));
+}
+
+tbody tr:nth-child(even) {
+    background: light-dark(var(--c-light), var(--c-dark));
+}
+
+th:first-child {
+    position: sticky;
+    inset-inline-start: 0;
+}
+
+th:first-child::after {
+    content: '';
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    width: .2rem;
+    height: 100%;
+    background: var(--c-accent);
+}
+
+thead th,
+tbody td {
+    text-align: center;
+}
+
+
+/*
+ * UTILITIES & LAYOUTS
+ */
+
+/* Layout for setting items next to each other on wider screens */
+.cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s1);
+    justify-content: center;
+}
+
+/* Layout for clumps of images */
+.masonry {
+    column-width: 25rem;
+    column-gap: var(--s1);
+}
+
+/* Horizontally scrolling layout */
+.reel {
+    display: flex;
+    block-size: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.reel>* {
+    flex: 0 0 clamp(15.625rem, 11.7898rem + 17.0455vw, 25rem);
+}
+
+.reel>*+* {
+    margin-inline-start: var(--s1);
+}
+
+/* Auto zigzag layout */
+.zigzag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s1-s3);
+    align-items: center;
+}
+
+/* create the zigzag */
+.zigzag:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+/* Remove default link underline */
+.zigzag a {
+    text-decoration: none;
+}
+
+/* Limit image width for easier responsive image sizing */
+.zigzag picture {
+    max-width: 900px;
+}
+
+/* Limit text-side width */
+.zigzag> :last-child {
+    flex-grow: 1;
+    flex-basis: 40ch;
+}
+
+/* Limit image-side width */
+.zigzag> :first-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: 50%;
+}
+
+/* Automatic wrapping layout */
+.switcher {
+    --threshold: 60rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--s1);
+
+}
+
+.switcher>* {
+    flex-grow: 1;
+    flex-basis: calc((var(--threshold) - 100%) * 999);
+}
+
+/* Centering layouts & single-purpose utilities */
+.flow>*+* {
+    margin-block-start: var(--s1);
+}
+
+.full-width,
+.wrap {
+    margin-inline: auto;
+}
+
+.full-width {
+    width: min(90rem, 100%);
+}
+
+.wrap {
+    width: var(--prose);
+}
+
+.stack-1>*+* {
+    margin-block-start: var(--s1);
+}
+
+.stack-3>*+* {
+    margin-block-start: var(--s3);
+}
+
+.stack-3-5>*+* {
+    margin-block-start: var(--s3-s5);
+}
+
+.fine-print,
+.slub {
+    font-size: var(--fs-small);
+    color: light-dark(var(--c-dark), var(--c-light));
+}
+
+.slub {
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.reverse-text {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+.overflow-scroll {
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.hidden,
+.error-message {
+    display: none;
+}
+
+.error-message {
+    color: light-dark(var(--c-error), var(--c-error-light));
+    font-size: var(--fs-small);
+}
+
+input.error,
+textarea.error {
+    border-color: light-dark(var(--c-error), var(--c-error-light));
+}
+
+.mt-0 {
+    margin-block-start: 0;
+}

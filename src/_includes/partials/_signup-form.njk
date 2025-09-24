@@ -1,0 +1,20 @@
+<form id="signup-form" class="stack-1" action="https://usebasin.com/f/89b25adb96c4" method="POST">
+    <!-- Honeypot field -->
+    <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off" />
+    <input type="hidden" name="formStart" />
+    <h2 class="h3">Subscribe to Manzanita news</h2>
+    <div>
+        <label for="signup-email" class="hidden">Email</label>
+        <input id="signup-email" type="email" name="email" placeholder="Enter your email" required autocomplete="email" />
+        <span class="error-message">Please enter a valid email address</span>
+    </div>
+    <button type="submit" class="button">Subscribe</button>
+</form>
+
+<!-- Signup form modal -->
+<dialog id="signup-modal" class="modal">
+    <div class="modal__content card flow">
+        <button class="close-btn" aria-label="Close dialog">{% include "partials/_close-btn.njk" %}</button>
+        <p>🎉 <strong>Thanks for subscribing to Manzanita news!</strong></p>
+    </div>
+</dialog>

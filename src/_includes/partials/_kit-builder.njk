@@ -1,0 +1,36 @@
+<div class="card flow">
+    <h3>Component kit builder</h3>
+    <dl class="dl--fw-switch">
+        <dt>Frameset</dt>
+        <dd>$2,800</dd>
+        <dt>Components</dt>
+        <dd>$<span id="components-price">0</span></dd>
+        <dt>Total</dt>
+        <dd>$<span id="total-price">0</span></dd>
+    </dl>
+    <form id="kit-builder" class="flow">
+        {% for category, items in components %}
+        <div class="component-category">
+            <fieldset>
+                <legend class="slub">{{ category }}</legend>
+
+                {% set base = items[0] %} {# first item is the default #}
+
+                {% for item in items %}
+                {% set diff = item.price - base.price %}
+                <label>
+                    <input type="radio" name="{{ category }}" value="{{ item.name }}" data-price="{{ item.price }}" {% if loop.first %}checked{% endif %}>
+                    <span>
+                        {{ item.name }}
+                        {% if not loop.first and diff > 0 %}
+                        (+ ${{ diff }})
+                        {% endif %}
+                    </span>
+                </label>
+                {% endfor %}
+            </fieldset>
+        </div>
+        {% endfor %}
+    </form>
+    <p class="fine-print">*Pricing and parts subject to change. Saddle and pedals not included but can be added. Substitutions available.</p>
+</div>

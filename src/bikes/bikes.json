@@ -1,0 +1,4 @@
+{
+    "tags": "bike",
+    "layout": "layouts/base.njk"
+}

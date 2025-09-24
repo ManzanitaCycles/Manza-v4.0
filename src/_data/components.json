@@ -1,0 +1,58 @@
+{
+    "Touch points": [
+        {
+            "name": "Ritchey Comp",
+            "price": 177
+        },
+        {
+            "name": "Ritchey WCS",
+            "price": 319
+        },
+        {
+            "name": "Enve",
+            "price": 818
+        }
+    ],
+    "drivetrain": [
+        {
+            "name": "Sram Apex/GX AXS Mullet",
+            "price": 1414
+        },
+        {
+            "name": "SRAM Rival/GX AXS Mullet",
+            "price": 1594
+        },
+        {
+            "name": "SRAM Force/X0 AXS Mullet",
+            "price": 2212
+        },
+        {
+            "name": "Special Blend Sram AXS Mullet",
+            "price": 1847
+        }
+    ],
+    "wheels": [
+        {
+            "name": "Hunt 4 Season Gravel",
+            "price": 469
+        },
+        {
+            "name": "Hunt 35 Carbon Gravel",
+            "price": 927
+        }
+    ],
+    "tires": [
+        {
+            "name": "Continental Dubnital Race",
+            "price": 140
+        },
+        {
+            "name": "Schwalbe Rick Pro XC",
+            "price": 149
+        },
+        {
+            "name": "Vittoria Peyote XC Race",
+            "price": 166
+        }
+    ]
+}

@@ -1,0 +1,202 @@
+---
+title: Manifesto
+metaDesc: The Manifesto is a fun-loving 130mm-travel hardtail.
+---
+
+<div class="full-width stack-3-5">
+    <!-- Hero -->
+    <div class="zigzag">
+        {% image "/assets/img/hardtail-manifesto.jpg", "manifesto steel hardtail", "(min-width: 1560px) 886px, (min-width: 1140px) calc(83.5vw - 400px), (min-width: 1000px) 900px, calc(95.29vw - 34px)", "eager", "high" %}
+        <div>
+            <p class="slub">Simply capable</p>
+            <div class="flow">
+                <h1 class="highlight">Manifesto</h1>
+                <p>The Manifesto is a fun-loving 130mm-travel hardtail with UDH-compatible dropouts and geo dialed for a balance of climbing efficiency and descending confidence.</p>
+                <p><a href="https://link.waveapps.com/me84fq-engpnh" class="button">Place deposit</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- Pricing -->
+    <div class="wrap flow">
+        <h2>Pricing</h2>
+        <div class="card flow">
+            <h3>frame</h3>
+            <p class="h2">$2,300</p>
+            <p class="fine-print">Included:</p>
+            <ul class="mt-0 list">
+                <li>Single color powder coat with vinyl graphics</li>
+                <li>Wolf Tooth seat collar, headset, rear axle, derailleur hanger</li>
+                <li>Stainless bottle bolts</li>
+                <li>Rear brake adapter</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Highlighted features -->
+    <div class="stack-3">
+        <div class="zigzag">
+            {% image "/assets/img/manifesto-drawing.jpg", "A drawing of the Manifesto hardtail calling out features and specs", "(min-width: 1560px) 886px, (min-width: 1140px) calc(83.5vw - 400px), (min-width: 1000px) 900px, calc(95.29vw - 34px)" %}
+            <div class="stack-1">
+                <h2>Big tire energy</h2>
+                <p>The Manifesto can clear 29x2.6" tires and a 34t chainring with a 52mm chainline.</p>
+            </div>
+        </div>
+        <div class="zigzag">
+            {% image "/assets/img/hardtail-udh.jpg", "The manifesto is compatible with Sram Transmission and UDH", "(min-width: 1560px) 886px, (min-width: 1140px) calc(83.5vw - 400px), (min-width: 1000px) 900px, calc(95.29vw - 34px)" %}
+            <div class="stack-1">
+                <h2>UDH for the win</h2>
+                <p>The dropouts are compatible with Sram's Universal Derailleur Hanger, wireless Transmission, and every other drivetrain on the market.</p>
+            </div>
+        </div>
+        <div class="zigzag">
+            {% image "/assets/img/hardtail-bottle-mounts.jpg", "A drawing of the Manifesto hardtail calling out features and specs", "(min-width: 1560px) 886px, (min-width: 1140px) calc(83.5vw - 400px), (min-width: 1000px) 900px, calc(95.29vw - 34px)" %}
+            <div class="stack-1">
+                <h2>More water for more miles</h2>
+                <p>The offset bosses on the seat tube allow you to install a water bottle cage without interfering with your long dropper post.</p>
+            </div>
+        </div>
+        <div class="zigzag">
+            {% image "/assets/img/hardtail-protection.jpg", "A drawing of the Manifesto hardtail calling out features and specs", "(min-width: 1560px) 886px, (min-width: 1140px) calc(83.5vw - 400px), (min-width: 1000px) 900px, calc(95.29vw - 34px)" %}
+            <div class="stack-1">
+                <h2>Serve and protect</h2>
+                <p>The externally-routed lines make maintenance a breeze. A custom 3d-printed housing guide protects the frame and lines from damage, while giving you the ability to add a third water bottle for those epic adventures.</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- Geometry -->
+    <div class="stack-1 wrap">
+        <h2>Geometry</h2>
+        {% include "partials/_manifestoGeo.njk" %}
+        <div class="fine-print">
+            <p>*Effective angle at average saddle height</p>
+            <p>**Center to top</p>
+            <p>***Measured with 61mm (2.4") tire</p>
+        </div>
+    </div>
+    <!-- Specs -->
+    <div>
+        <div class="card flow wrap">
+            <h2>Frame specs</h2>
+            <dl>
+                <dt>Max tire width</dt>
+                <dd>2.6" or 66mm</dd>
+                <dt>Hub dimensions</dt>
+                <dd>12x148 Boost</dd>
+                <dt>Derailleur hanger</dt>
+                <dd>UDH / Sram Transmission</dd>
+                <dt>Chainline</dt>
+                <dd>52-55mm</dd>
+                <dt>Max chainring</dt>
+                <dd>34t</dd>
+                <dt>Brake type</dt>
+                <dd>IS</dd>
+                <dt>Max rear rotor size</dt>
+                <dd>180mm</dd>
+                <dt>Seat post</dt>
+                <dd>31.6mm</dd>
+                <dt>Seat post clamp</dt>
+                <dd>34.9-35mm</dd>
+                <dt>Bottom bracket</dt>
+                <dd>73mm BSA</dd>
+            </dl>
+        </div>
+    </div>
+    <!-- Colors -->
+    <div class="wrap stack-1">
+        <h2>Color options</h2>
+        <p>My local powder coater uses powders from <a href="">Prismatic Powders</a>. There are probably thousands of colors to choose from. I can help you narrow down your choices for the powder color and graphics color.</p>
+        <p>If you're interested in doing a special paint scheme, I can send the frame to Ollie at Dark Matter Finishing for a showroom finish. It costs more and takes longer, but Ollie's work is worth it.</p>
+    </div>
+    <!-- Testimonials -->
+    <div class="flow">
+        <div class="reel">
+            {% for rider in quotes %}
+            {% if rider.category == 'Manifesto' %}
+            <figure class="card flow quote">
+                {% image rider.img, rider.alt, "(min-width: 1380px) 346px, calc(14.15vw + 154px)" %}
+                <figcaption class="flow">
+                    <p><strong>&ldquo;{{ rider.text }}&rdquo;</strong></p>
+                    <p>&mdash;{{ rider.name }}</p>
+                </figcaption>
+            </figure>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <!-- FAQ -->
+    <div class="wrap stack-1">
+        <h2>FAQ</h2>
+        <div class="accordion">
+            <details>
+                <summary>What's included with the frame?</summary>
+                <div>
+                    <ul class="list">
+                        <li>Wolf Tooth rear bolt-on axle</li>
+                        <li>Sram Universal Derailleur Hanger</li>
+                        <li>Wolf Tooth seat collar</li>
+                        <li>Wolf Tooth Performance headset</li>
+                        <li>Chainstay protection</li>
+                        <li>3d-printed housing guides</li>
+                        <li>3d-printed down tube protector guide</li>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>How fast can I get my hands on a Manifesto?</summary>
+                <div>
+                    <p>My goal is to get you a frameset within 12-16 weeks of your deposit. Full builds may take longer depending on parts availability.</p>
+                </div>
+            </details>
+            <details>
+                <summary>What brake adapter do I need?</summary>
+                <div>
+                    <p>
+                        Make sure you choose a <strong>rear</strong>, <strong>IS to post mount</strong> adapter for the rotor size you plan to run.
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>Can I run a front derailleur?</summary>
+                <div>
+                    <p>
+                        No, the bike frame is optimized for 1x drivetrains.
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>Can I run 650b wheels?</summary>
+                <div>
+                    <p>
+                        The frame is designed around the height of a 29er wheel with 2.4" tires. Running 650b wheels will make your bike too low to the ground, resulting in frequent pedal strikes.
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>Can I over/under fork the frame?</summary>
+                <div>
+                    <p>
+                        The bike is designed for 130mm travel forks. Running a longer fork will void the warranty because it puts additional stress on the frame. But you can run a 120mm fork no problem. It'll make the head tube and seat tube angles about a half degree steeper.
+                    </p>
+                </div>
+            </details>
+            {% for item in faq %}
+            <details>
+                <summary>{{ item.q }}</summary>
+                <div class="flow">
+                    {{ item.a | safe }}
+                </div>
+            </details>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- photos -->
+    <div class="masonry flow">
+        {% image "/assets/img/manifesto-steel-hardtail.jpg", "Manifesto steel hardtail ruby red", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
+        {% image "/assets/img/manifesto-battle-born.jpg", "Manzanita Cycles Battle Born graphic", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
+        {% image "/assets/img/manifesto-bottle-cage.jpg", "Offset bottle cage to allow long dropper posts", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
+        {% image "/assets/img/manifesto-protection.jpg", "3d printed housing guide protects the down tube", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
+        {% image "/assets/img/manifesto-manzanita-graphics.jpg", "Manzanita graphic in silver", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
+        {% image "/assets/img/manifesto-seat-cluster.jpg", "Welded seat cluster on steel hardtail", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
+        {% image "/assets/img/manifesto-seatstays.jpg", "Manifesto seatstays with arched bridge", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
+    </div>
+</div>
