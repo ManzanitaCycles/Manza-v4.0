@@ -224,7 +224,7 @@ summary {
 
 .button--disabled {
     background-color: light-dark(var(--c-lightest), var(--c-darkish));
-    color: light-dark(var(--c-darkish), var(--c-light));
+    color: light-dark(var(--c-darker), var(--c-lightest));
     box-shadow: none;
     width: fit-content;
     border: var(--border);
