@@ -1,0 +1,27 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ schema.type }}",
+  {% if schema.name %}
+    "name": "{{ schema.name }}",
+  {% endif %}
+  {% if schema.headline %}
+    "headline": "{{ schema.headline }}",
+  {% endif %}
+  {% if schema.description %}
+    "description": "{{ schema.description }}",
+  {% endif %}
+  {% if schema.image %}
+    "image": "{{ schema.image }}",
+  {% endif %}
+  {% if schema.datePublished %}
+    "datePublished": "{{ schema.datePublished | dateToISO }}",
+  {% endif %}
+  {% if schema.author %}
+    "author": {
+      "@type": "Person",
+      "name": "{{ schema.author }}"
+    }
+  {% endif %}
+}
+</script>

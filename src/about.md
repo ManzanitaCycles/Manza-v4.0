@@ -1,8 +1,13 @@
 ---
 layout: layouts/page.njk
 title: Simple machines, built right
-metaDesc: Your new bike should disappear under you so you can focus on your adventure
+metaDesc: Your new bike should disappear under you so you can focus on your adventure.
 permalink: /about/
+Schema:
+type: AboutPage
+name: About page
+headline: Simple machines, built right
+description: I believe steel is the ideal material for a bicycle - strong, durable, easy to work with, a joy to ride, and, frankly, beautiful.
 ---
 
 **I know how important it is to have a reliable machine, because a mechanical failure can ruin a ride or a trip.**

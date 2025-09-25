@@ -4,11 +4,23 @@ const esbuild = require("esbuild");
 const htmlmin = require("html-minifier-terser");
 const CleanCSS = require("clean-css");
 const fs = require("fs");
+const { URL } = require('url');
 
 module.exports = function (eleventyConfig) {
     // Passthrough assets
     eleventyConfig.addPassthroughCopy("src/assets/favicon");
     eleventyConfig.addPassthroughCopy("src/_redirects");
+    eleventyConfig.addPassthroughCopy("src/robots.txt");
+
+    // A filter to create absolute URLs
+    eleventyConfig.addFilter("absoluteUrl", (path, base) => {
+        try {
+            return new URL(path, base).toString();
+        } catch (e) {
+            console.error("Failed to create absolute URL:", e);
+            return path;
+        }
+    });
 
     // Eleventy Image plugin
     eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
