@@ -13,7 +13,7 @@
             "price": 818
         }
     ],
-    "drivetrain": [
+    "Drivetrain": [
         {
             "name": "Sram Apex/GX AXS Mullet",
             "price": 1414
@@ -31,7 +31,7 @@
             "price": 1847
         }
     ],
-    "wheels": [
+    "Wheels": [
         {
             "name": "Hunt 4 Season Gravel",
             "price": 469
@@ -41,7 +41,7 @@
             "price": 927
         }
     ],
-    "tires": [
+    "Tires": [
         {
             "name": "Continental Dubnital Race",
             "price": 140

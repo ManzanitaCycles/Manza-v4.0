@@ -238,21 +238,24 @@ summary {
     border-radius: var(--border-radius);
 }
 
-/* Component Category */
-.component-category fieldset {
+/* Kit Builder */
+/* Remove default border */
+.kit-builder {
     border: none;
 }
 
-.component-category label {
+/* Align label with input */
+.kit-builder label {
     display: flex;
     align-items: center;
     gap: var(--s-1);
-    text-transform: capitalize;
     color: light-dark(var(--c-darker), var(--c-lightest));
     line-height: calc(var(--ratio)*1.5);
+    font-weight: 500;
 }
 
-.component-category input[type="radio"] {
+/* Adjust default styles on radio buttons */
+.kit-builder input[type="radio"] {
     width: 1em;
     height: 1em;
     accent-color: var(--c-accent);
@@ -631,15 +634,10 @@ tbody td {
     margin-block-start: var(--s3-s5);
 }
 
-.fine-print,
-.slub {
+.fine-print {
     font-size: var(--fs-small);
     color: light-dark(var(--c-dark), var(--c-light));
-}
-
-.slub {
-    text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 300;
 }
 
 .reverse-text {

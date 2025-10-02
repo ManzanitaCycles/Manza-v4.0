@@ -10,26 +10,24 @@
     </dl>
     <form id="kit-builder" class="flow">
         {% for category, items in components %}
-        <div class="component-category">
-            <fieldset>
-                <legend class="slub">{{ category }}</legend>
+        <fieldset class="kit-builder">
+            <legend class="fine-print">{{ category }}</legend>
 
-                {% set base = items[0] %} {# first item is the default #}
+            {% set base = items[0] %} {# first item is the default #}
 
-                {% for item in items %}
-                {% set diff = item.price - base.price %}
-                <label>
-                    <input type="radio" name="{{ category }}" value="{{ item.name }}" data-price="{{ item.price }}" {% if loop.first %}checked{% endif %}>
-                    <span>
-                        {{ item.name }}
-                        {% if not loop.first and diff > 0 %}
-                        (+ ${{ diff }})
-                        {% endif %}
-                    </span>
-                </label>
-                {% endfor %}
-            </fieldset>
-        </div>
+            {% for item in items %}
+            {% set diff = item.price - base.price %}
+            <label>
+                <input type="radio" name="{{ category }}" value="{{ item.name }}" data-price="{{ item.price }}" {% if loop.first %}checked{% endif %}>
+                <span>
+                    {{ item.name }}
+                    {% if not loop.first and diff > 0 %}
+                    (+ ${{ diff }})
+                    {% endif %}
+                </span>
+            </label>
+            {% endfor %}
+        </fieldset>
         {% endfor %}
     </form>
     <p class="fine-print">*Pricing and parts subject to change. Saddle and pedals not included but can be added. Substitutions available.</p>
