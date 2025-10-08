@@ -32,7 +32,7 @@
     --border: 3px solid light-dark(var(--c-light), var(--c-darkish));
     /* Legible text */
     --prose: min(55ch, 100%);
-    --kerning: .05em;
+    --kerning: .5px;
 }
 
 /* Box sizing rules, reset margins & padding, and inherit color */
@@ -49,7 +49,7 @@
 body {
     background: light-dark(var(--c-lighter), var(--c-darker));
     color: light-dark(var(--c-darker), var(--c-lightest));
-    margin: var(--s0);
+    margin: var(--s0) var(--s0) var(--s3) var(--s0);
     font: var(--fs-body)/var(--ratio) system-ui, sans-serif;
 }
 
@@ -70,7 +70,7 @@ h3,
 button,
 input,
 label {
-    line-height: 1.1;
+    line-height: 1;
 }
 
 /* Balance text wrapping on headings */
@@ -86,6 +86,7 @@ h3,
 
 h1 {
     font-size: var(--fs-h1);
+    letter-spacing: -1px;
 }
 
 h2,
@@ -152,7 +153,8 @@ footer {
     justify-content: space-between;
     align-items: end;
     gap: var(--s3);
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+
 }
 
 /* Make details summary element stand out */
@@ -212,7 +214,6 @@ summary {
     transition: .15s;
     border-radius: var(--border-radius);
     text-decoration: none;
-    box-shadow: .5px 1px 1px hsl(180, 10%, 40%);
     text-transform: uppercase;
 }
 
@@ -281,7 +282,7 @@ input,
 textarea {
     border: var(--border);
     border-radius: var(--border-radius);
-    padding: var(--s0) var(--s1);
+    padding: var(--s0);
     width: 100%;
     background: light-dark(var(--c-lightest), var(--c-dark));
 }
@@ -529,6 +530,25 @@ tbody td {
     flex-wrap: wrap;
     gap: var(--s1);
     justify-content: center;
+}
+
+/* Align input and button */
+.signup-form {
+    display: flex;
+    align-items: center;
+    gap: var(--s0);
+}
+
+/* Add a border to make input and button heights equal */
+.signup-form .button {
+    border: var(--border);
+    border-color: var(--c-button);
+    padding: var(--s0);
+}
+
+/* Make input font size small so email addresses fit on mobile */
+.signup-form input {
+    font-size: var(--fs-small);
 }
 
 /* Layout for clumps of images */
