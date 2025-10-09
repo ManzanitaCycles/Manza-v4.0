@@ -143,6 +143,7 @@ dt {
 /* Start in second column */
 dd {
     grid-column-start: 2;
+    color: light-dark(var(--c-darkish), var(--c-lighter));
 }
 
 footer {
@@ -205,7 +206,7 @@ summary {
 /* Button Component */
 .button {
     border: none;
-    padding: var(--s0) var(--s1);
+    padding: var(--s0);
     background: var(--c-button);
     color: var(--c-darkest);
     font-size: var(--fs-small);
@@ -215,6 +216,7 @@ summary {
     border-radius: var(--border-radius);
     text-decoration: none;
     text-transform: uppercase;
+    display: inline-block;
 }
 
 .button--clear {
@@ -269,6 +271,7 @@ summary {
 
 .dl--fw-switch dd {
     font-weight: 700;
+    color: light-dark(var(--c-darker), var(--c-lighter));
 }
 
 /* Form Elements */
@@ -687,4 +690,8 @@ textarea.error {
 
 .mt-0 {
     margin-block-start: 0;
+}
+
+.text-light {
+    color: light-dark(var(--c-darkish), var(--c-lighter));
 }
