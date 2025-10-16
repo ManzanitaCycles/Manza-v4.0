@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "clean-css": "^5.3.3",
+    "eleventy-google-fonts": "^0.1.0",
     "esbuild": "^0.25.9",
     "html-minifier-terser": "^7.2.0"
   }

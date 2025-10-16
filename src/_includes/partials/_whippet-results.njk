@@ -1,0 +1,23 @@
+<section class="stack">
+    <h2>Whippet results</h2>
+    <div class="reel">
+        {% for rider in quotes %}
+            {% if rider.category == title %}
+                <figure class="box stack p-s-m">
+                    {% image rider.img, rider.alt, "(min-width: 1560px) 410px, (min-width: 820px) calc(32.08vw - 84px), (min-width: 780px) calc(50vw - 90px), calc(100vw - 102px)" %}
+                    <figcaption class="stack">
+                        <p class="h3">{{ rider.name }}</p>
+                        {% if rider.results %}
+                            <dl>
+                                {% for result in rider.results %}
+                                    <dt class="bold text-dark">{{ result.place }}</dt>
+                                    <dd class="fine-print">{{ result.race }}</dd>
+                                {% endfor %}
+                            </dl>
+                        {% endif %}
+                    </figcaption>
+                </figure>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>

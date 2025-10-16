@@ -1,20 +1,17 @@
-<form id="signup-form" class="stack-1" action="https://usebasin.com/f/89b25adb96c4" method="POST">
+<form id="signup-form" class="stack box p-s-m" action="https://usebasin.com/f/89b25adb96c4" method="POST">
     <!-- Honeypot field -->
-    <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off" />
-    <input type="hidden" name="formStart" />
-    <h2 class="h3">Subscribe to Manzanita news</h2>
+    <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off"/>
+    <input type="hidden" name="formStart"/>
+    <h2 class="h3 m-top-0">Subscribe to Manzanita news</h2>
     <div class="signup-form">
-        <label for="signup-email" class="hidden">Email</label>
-        <input id="signup-email" type="email" name="email" placeholder="Enter your email" required autocomplete="email" />
+        
+        <input id="signup-email" type="email" name="email" placeholder="Enter your email" required autocomplete="email"/>
         <button type="submit" class="button">Subscribe</button>
     </div>
-    <p class="error-message mt-0">Please enter a valid email address</p>
+    <p class="error-message">Enter a valid email address.</p>
 </form>
-
 <!-- Signup form modal -->
-<dialog id="signup-modal" class="modal">
-    <div class="modal__content card flow">
-        <button class="close-btn" aria-label="Close dialog">{% include "partials/_close-btn.njk" %}</button>
-        <p>🎉 <strong>Thanks for subscribing to Manzanita news!</strong></p>
-    </div>
+<dialog id="signup-modal" class="modal box p-s-m stack">
+    {% include "partials/_close-btn.njk" %}
+    <p>🎉 <strong>Thanks for subscribing to Manzanita news!</strong></p>
 </dialog>

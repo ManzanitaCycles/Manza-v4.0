@@ -1,26 +1,28 @@
-<form id="frameFitCalc" class="stack-1 card">
+<form id="frameFitCalc" class="stack p-s-m">
     <div>
         <label for="user_handlebar_stack">Enter your handlebar stack (mm)</label>
         <input type="number" id="user_handlebar_stack" placeholder="e.g. 690">
-        <span class="error-message">Please enter a number between 540 and 775.</span>
+        <span class="error-message">Enter a number between 540 and 775.</span>
     </div>
     <div>
         <label for="user_handlebar_reach">Enter your handlebar reach (mm)</label>
         <input type="number" id="user_handlebar_reach" placeholder="e.g. 465">
-        <span class="error-message">Please enter a number between 375 and 520.</span>
+        <span class="error-message">Enter a number between 375 and 520.</span>
     </div>
-    <div>
+    <div class="frameFitCalc__buttons">
         <button type="submit" class="button">Calculate</button>
         <button type="button" class="button button--clear">Clear</button>
     </div>
 </form>
 <dialog id="frameFitCalc__modal" class="modal">
-    <div class="modal__content card wrap stack-1">
-        <button class="close-btn" aria-label="Close dialog">{% include "partials/_close-btn.njk" %}</button>
-        <h3 class="mt-0">Results</h3>
-        <div class="card flow">
+    <div class="box p-s-m prose stack">
+        <div class="flex-close-btn">
+            <h3 class="inline-block">Results</h3>
+            {% include "partials/_close-btn.njk" %}
+        </div>
+        <div class="box p-s-m stack bg-light">
             <h3>Best match</h3>
-            <dl class="dl--fw-switch">
+            <dl>
                 <dt>Frame size</dt>
                 <dd id="best-frame-size"></dd>
                 <dt>Stem length</dt>
@@ -31,9 +33,9 @@
                 <dd id="best-spacer-stack"></dd>
             </dl>
         </div>
-        <div class="card flow">
+        <div class="box p-s-m stack bg-light">
             <h3>Best match with negative stem</h3>
-            <dl class="dl--fw-switch">
+            <dl>
                 <dt>Frame size</dt>
                 <dd id="neg-stem-frame-size"></dd>
                 <dt>Stem length</dt>

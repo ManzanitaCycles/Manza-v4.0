@@ -1,0 +1,34 @@
+---
+title: Simple machines built right
+desc: Your new bike should disappear under you so you can focus on your adventure.
+permalink: /about/
+layout: layouts/page.njk
+image: /assets/img/about-blue-ridge-parkway-tour.jpg
+alt: Nick and Carrie on a bike tour on the Blue Ridge Parkway
+testimonial:
+    image: /assets/img/rachel-quote.jpg
+    alt: Manzanita touring bike in Marin Headlands
+    quote: I just got back from my first bikepacking trip and I was so grateful that I had my Manzanita to accompany me.
+    name: Rachel B.
+---
+
+<p><strong>I know how important it is to have a reliable machine, because a mechanical failure can ruin a ride or a trip.</strong></p>
+
+<p>That's why I made my first bicycle frame in 2007. I wanted something I could trust during a 5-week trip around Iceland.</p>
+
+<p>I believe steel is the ideal material for a bicycle: strong, durable, easy to work with, a joy to ride, and, frankly, beautiful. There's just something about those skinny tubes that makes me smile.</p>
+
+{% image image, alt, "(min-width: 1660px) 687px, (min-width: 700px) calc(8.51vw + 547px), calc(92.63vw - 26px)", "eager", "high" %}
+
+<p><strong>My goal is to build steel bicycles that are dependable, fun, and tailored to your adventures.</strong></p>
+
+<p>Whether you're after a racy gravel bike <a href="/bikes/whippet">like the Whippet</a>, a fun-loving hardtail <a href="/bikes/manifesto">like the Manifesto</a>, or a <a href="/bikes/custom">one-of-a-kind custom build</a>, I promise to deliver you a bicycle you can count on ride after ride.</p>
+
+<figure class="box p-s-m stack">
+    {% image testimonial.image, testimonial.alt, "(min-width: 1720px) 627px, (min-width: 680px) calc(6.67vw + 514px), calc(88.89vw - 31px)" %}
+    <figcaption class="stack">
+        {% include "partials/_quote-icon.njk" %}
+        <p class="m-top-0 quote-text">{{ testimonial.quote }}</p>
+        <p class="fine-print">{{ testimonial.name }}</p>
+    </figcaption>
+</figure>

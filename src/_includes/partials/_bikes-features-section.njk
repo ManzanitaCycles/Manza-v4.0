@@ -1,0 +1,11 @@
+<section class="stack-xl-4xl">
+    {% for feature in features %}
+    <div class="sidebar">
+        {% image feature.image, feature.alt, "(min-width: 1560px) 900px, (min-width: 1080px) calc(83.7vw - 389px), (min-width: 1020px) 900px, 90.29vw" %}
+        <div class="stack">
+            <h2>{{ feature.title }}</h2>
+            <p class="muted m-top-2xs">{{ feature.desc }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</section>

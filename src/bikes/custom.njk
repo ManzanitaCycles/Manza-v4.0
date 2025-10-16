@@ -1,128 +1,154 @@
 ---
 title: Custom
-metaDesc: A unique bike with all the personal touches.
+subTitle: It's all about you
+desc: A unique bike fit to you with a showroom finish and all the personal touches.
+miniDesc: One-of-a-kind
+image: /assets/img/klunker.jpg
+alt: Steel klunker mountain bike
+order: 3
+depositLink: https://link.waveapps.com/2w8tkt-fjqurh
+features:
+  - image: /assets/img/moira-tourer.jpg
+    alt: Red steel bikepacking bike with steel fork
+    title: For the long haul
+    desc: Are you planning for a long tour and looking for a reliable companion? Let's get your steel mule dialed before the trip.
+  - image: /assets/img/commuter-overall.jpg
+    alt: Hybrid commuter bike with fenders and dynamo lighting
+    title: To work and beyond
+    desc: Or do you need a new machine to take you to your job every day? I spent a decade commuting to work and can outfit you with hassle-free transportation.
+  - image: /assets/img/randonneur.jpg
+    alt: Randonneuring bike with silver fenders, custom racks, and dynamo lighting
+    title: All night long
+    desc: Or maybe you have a special affinity for riding through the night? A kitted out randonneuring rig will keep you moving efficiently and in style.
+  - image: /assets/img/ultralight-hardtail.jpg
+    alt: Ultralight steel hardtail weighs a little under 20lbs
+    title: Let's get groovy
+    desc: Whatever you're looking for, we'll get you a dialed fit, a showroom finish, and a bike you're going to love for years to come.
+photos:
+  - src: /assets/img/custom-purpleHardtail.jpg
+    alt: Purple hardtail for bikepacking
+  - src: /assets/img/custom-badge.jpg
+    alt: Manzanita head tube badge with stamped build number
+  - src: /assets/img/custom-steel-gravel.jpg
+    alt: Baby blue steel gravel bike with steel fork
+  - src: /assets/img/custom-battleBorn.jpg
+    alt: Manzanita Battle Born graphic on down tube
+  - src: /assets/img/custom-robb-gravel.jpg
+    alt: Custom steel gravel bike with clearance for XC race tires
+  - src: /assets/img/custom-ultralight-hardtail.jpg
+    alt: internal routing port
+  - src: /assets/img/custom-rando.jpg
+    alt: Custom steel randonneuring bike
+  - src: /assets/img/custom-yoke.jpg
+    alt: Custom 3d printed stainless steel yoke
+  - src: /assets/img/custom-klunker.jpg
+    alt: Modern steel klunker mountain bike
+  - src: /assets/img/custom-collin-bikepacker.jpg
+    alt: Steel bikepacking bike with custom lavender paint scheme
+  - src: /assets/img/custom-seat-cluster.jpg
+    alt: Steel seat cluster in bright red
 ---
 
-<div class="full-width stack-3-5">
-    <div class="zigzag">
-        {% image "/assets/img/klunker.jpg", "Modern klunker bike for Casey", "(min-width: 1560px) 886px, (min-width: 1140px) calc(83.5vw - 400px), (min-width: 1000px) 900px, calc(95.29vw - 34px)", "eager", "high" %}
-        <div>
-            <p class="fine-print">It's all about you</p>
-            <div class="flow">
-                <h1>Custom</h1>
-                <p class="text-light">A unique bike fit to you with a showroom finish and all the personal touches.</p>
-                <p><a href="https://link.waveapps.com/2w8tkt-fjqurh" class="button">Place deposit</a></p>
-            </div>
-        </div>
+<!-- Hero -->
+{% include "partials/_bikes-hero-section.njk" %}
+<!-- Pricing -->
+<section>
+  <div class="box prose">
+    <header class="flex-icon p-s-m">
+      {% include "partials/_sales-tag-icon.njk" %}
+      <h2>Pricing</h2>
+    </header>
+    <div class="p-s-m two-columns">
+      <div class="stack">
+        <p class="fine-print">Frame</p>
+        <h3 class="m-top-2xs h2">$2,600</h3>
+        <p class="fine-print">Includes:</p>
+        <ul class="m-top-0 list">
+          <li>Powder coat by Dark Matter Finishing</li>
+          <li>Seat collar, rear axle, derailleur hanger</li>
+          <li>Stainless bottle bolts</li>
+        </ul>
+      </div>
+      <div class="stack">
+        <p class="fine-print">Steel fork</p>
+        <h3 class="m-top-2xs h2">$600</h3>
+        <p class="fine-print">Includes:</p>
+        <ul class="m-top-0 list">
+          <li>Powder coated to match frame color scheme</li>
+          <li>Front axle</li>
+        </ul>
+      </div>
     </div>
-    <!-- Pricing -->
-    <div class="wrap flow">
-        <h2>Pricing</h2>
-        <div class="card flow">
-            <dl class="dl--fw-switch">
-                <dt>Frame</dt>
-                <dd>$2,600</dd>
-            </dl>
-            <p class="fine-print">Included:</p>
-            <ul class="mt-0 list">
-                <li>Powder coat by Dark Matter Finishing</li>
-                <li>Seat collar, rear axle, derailleur hanger</li>
-                <li>Stainless bottle bolts</li>
-            </ul>
-            <dl class="dl--fw-switch">
-                <dt>Steel fork</dt>
-                <dd>$600</dd>
-            </dl>
-            <p class="fine-print">Included:</p>
-            <ul class="mt-0 list">
-                <li>Powder coated to match frame color scheme</li>
-                <li>Front axle</li>
-            </ul>
-        </div>
-    </div>
-    <!-- Highlighted features -->
-    <div class="stack-3">
-        <div class="zigzag">
-            {% image "/assets/img/moira-tourer.jpg", "Red steel bikepacking bike with steel fork", "(min-width: 1560px) 886px, (min-width: 1140px) calc(83.5vw - 400px), (min-width: 1000px) 900px, calc(95.29vw - 34px)" %}
-            <div class="stack-1">
-                <h2>For the long haul</h2>
-                <p class="text-light">Are you planning for a long tour and looking for a reliable companion? Let's get your steel mule dialed before the trip.</p>
-            </div>
-        </div>
-        <div class="zigzag">
-            {% image "/assets/img/commuter-overall.jpg", "Hybrid commuter bike with fenders and dynamo lighting", "(min-width: 1560px) 886px, (min-width: 1140px) calc(83.5vw - 400px), (min-width: 1000px) 900px, calc(95.29vw - 34px)" %}
-            <div class="stack-1">
-                <h2>To work and beyond</h2>
-                <p class="text-light">Or do you need a new machine to take you to your job every day? I spent a decade commuting to work and can outfit you with hassle-free transportation.</p>
-            </div>
-        </div>
-        <div class="zigzag">
-            {% image "/assets/img/randonneur.jpg", "Randonneuring bike with silver fenders, custom racks, and dynamo lighting", "(min-width: 1560px) 886px, (min-width: 1140px) calc(83.5vw - 400px), (min-width: 1000px) 900px, calc(95.29vw - 34px)" %}
-            <div class="stack-1">
-                <h2>All night long</h2>
-                <p class="text-light">Or maybe you have a special affinity for riding through the night? A kitted out randonneuring rig will keep you moving efficiently and in style.</p>
-            </div>
-        </div>
-        <div class="zigzag">
-            {% image "/assets/img/ultralight-hardtail.jpg", "Ultralight steel hardtail weighs a little under 20lbs", "(min-width: 1560px) 886px, (min-width: 1140px) calc(83.5vw - 400px), (min-width: 1000px) 900px, calc(95.29vw - 34px)" %}
-            <div class="stack-1">
-                <h2>Let's get groovy</h2>
-                <p class="text-light">Whatever you're looking for, we'll get you a dialed fit, a showroom finish, and a bike you're going to love for years to come.</p>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonials -->
-    <div class="reel">
-        {% for quote in quotes %}
-        {% if quote.category == "Custom" %}
-        <figure class="card flow quote">
-            {% image quote.img, quote.alt, "(min-width: 1380px) 346px, calc(14.15vw + 154px)" %}
-            <figcaption class="flow">
-                <p><strong>&ldquo;{{ quote.text }}&rdquo;</strong></p>
-                <p class="text-light">&mdash;{{ quote.name }}</p>
-            </figcaption>
-        </figure>
-        {% endif %}
-        {% endfor %}
-    </div>
-    <!-- FAQ -->
-    <div class="wrap stack-1">
-        <h2>FAQ</h2>
-        <div class="accordion">
-            <details>
-                <summary>How quickly can I get my custom frame?</summary>
-                <div>
-                    <p>Typical turnaround time is 4 months, but many factors can change this estimate. Please <a href="/contact">contact me</a> to get a more accurate estimate.</p>
-                </div>
-            </details>
-            <details>
-                <summary>Can I get the frame and fork custom painted?</summary>
-                <div>
-                    <p>Yes you can. <a href="/contact/">Contact me</a> for pricing and turnaround time.</p>
-                </div>
-            </details>
-            {% for item in faq %}
-            <details>
-                <summary>{{ item.q }}</summary>
-                <div class="flow">
-                    {{ item.a | safe }}
-                </div>
-            </details>
-            {% endfor %}
-        </div>
-    </div>
-    <!-- photos -->
-    <div class="masonry flow">
-        {% image "/assets/img/custom-purpleHardtail.jpg", "Purple hardtail for bikepacking", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
-        {% image "/assets/img/custom-badge.jpg", "Manzanita head tube badge with stamped build number", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
-        {% image "/assets/img/custom-steel-gravel.jpg", "Baby blue steel gravel bike with steel fork", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
-        {% image "/assets/img/custom-battleBorn.jpg", "Manzanita Battle Born graphic on down tube", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
-        {% image "/assets/img/custom-robb-gravel.jpg", "Custom steel gravel bike with clearance for XC race tires", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
-        {% image "/assets/img/custom-ultralight-hardtail.jpg", "internal routing port", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
-        {% image "/assets/img/custom-rando.jpg", "Custom steel randonneuring bike", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
-        {% image "/assets/img/custom-yoke.jpg", "Custom 3d printed stainless steel yoke", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
-        {% image "/assets/img/custom-klunker.jpg", "Modern steel klunker mountain bike", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
-        {% image "/assets/img/custom-collin-bikepacker.jpg", "Steel bikepacking bike with custom lavender paint scheme", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
-        {% image "/assets/img/custom-seat-cluster.jpg", "Steel seat cluster in bright red", "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
-    </div>
-</div>
+  </div>
+</section>
+<!-- Highlighted features -->
+{% include "partials/_bikes-features-section.njk" %}
+<!-- Testimonials -->
+{% include "partials/_testimonials.njk" %}
+<!-- FAQ -->
+<section class="prose stack">
+  <h2>FAQ</h2>
+  <div class="accordion box">
+    <details name="group">
+      <summary>What happens after I place a deposit?</summary>
+      <div class="stack">
+        <p>
+          I'll reach out to you to discuss your project in detail and to provide
+          a more accurate estimate when the bike will be ready to deliver.
+        </p>
+        <p>Here's an idea of the process:</p>
+        <ol class="ol list">
+          <li>
+            We'll discuss your fit, your riding preferences, and all the goals
+            you have for your custom bike.
+          </li>
+          <li>
+            I'll provide a drawing of the bike that we'll review together and
+            make any changes until it's just right.
+          </li>
+          <li>
+            When the drawing is approved, I'll order the raw materials for the
+            frame and begin to order any components if you're opting for a
+            complete build. At this time I'll request a payment of 50% of the
+            remaining balance.
+          </li>
+          <li>I'll make your frame and send it to out to get painted.</li>
+          <li>
+            When it returns from paint, I'll build up the bike and perform a
+            final quality check before delivery.
+          </li>
+          <li>Once the final payment is made, I'll ship you your new bike!</li>
+        </ol>
+      </div>
+    </details>
+    <details name="group">
+      <summary>How quickly can I get my custom frame?</summary>
+      <div>
+        <p>
+          Typical turnaround time is 4 months, but many factors can change this
+          estimate. Please <a href="/contact">contact me</a> to get a more
+          accurate estimate.
+        </p>
+      </div>
+    </details>
+    <details name="group">
+      <summary>Can I get the frame and fork custom painted?</summary>
+      <div>
+        <p>
+          Yes you can. <a href="/contact/">Contact me</a> for pricing and
+          turnaround time.
+        </p>
+      </div>
+    </details>
+    {% for item in faq %}
+    <details name="group">
+      <summary>{{ item.q }}</summary>
+      <div class="stack">
+        {{ item.a | safe }}
+      </div>
+    </details>
+    {% endfor %}
+  </div>
+</section>
+<!-- photos -->
+{% include "partials/_bikes-photos-section.njk" %}

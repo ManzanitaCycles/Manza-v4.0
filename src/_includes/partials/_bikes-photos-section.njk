@@ -1,0 +1,5 @@
+<section class="masonry stack">
+    {% for photo in photos %}
+        {% image photo.src, photo.alt, "(min-width: 1620px) 464px, (min-width: 1300px) calc(21vw + 128px), (min-width: 880px) calc(50vw - 36px), calc(100vw - 48px)" %}
+    {% endfor %}
+</section>
