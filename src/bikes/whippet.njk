@@ -44,13 +44,12 @@ photos:
 <!-- Pricing -->
 <section class="cluster">
   <div class="box narrow">
-    <header class="flex-icon p-s-m">
+    <header class="box__header">
       {% include "partials/_sales-tag-icon.njk" %}
       <h2>Pricing</h2>
     </header>
-    <div class="stack p-s-m">
-      <p class="h2">$2,800</p>
-      <div>
+    <div class="box__content stack">
+      <h3 class="h2">$2,800</h3>
         <p class="fine-print">Includes:</p>
         <ul class="list m-top-0">
           <li>Whippet 2.0 frame</li>
@@ -60,17 +59,17 @@ photos:
           <li>Wolf Tooth rear axle</li>
           <li>Wolf Tooth derailleur hanger</li>
         </ul>
-      </div>
     </div>
   </div>
   {% include "partials/_kit-builder.njk" %}
 </section>
+<!-- Sleek or simple -->
 <section class="box prose">
-  <header class="p-s-m flex-icon">
+  <header class="box__header">
     {% include "partials/_choices-icon.njk" %}
     <h2>Sleek or simple?</h2>
   </header>
-  <div class="stack p-s-m">
+  <div class="box__content stack">
     {% image "/assets/img/whippet-drawing.jpg", "Whippet 2.0 can be configured
     for sleek internal routing or simple external routing", "(min-width: 1660px)
     687px, (min-width: 700px) calc(8.51vw + 547px), calc(92.63vw - 26px)" %}
@@ -93,27 +92,27 @@ photos:
 {% include "partials/_bikes-features-section.njk" %}
 <!-- Geometry -->
 <section class="stack prose">
-  <div class="stack">
-    <h2>Geometry</h2>
-    <p>
-      The Whippet comes in 6 frame sizes to cover a wide range of riders. Please
-      use the
-      <strong>Frame Fit Calculator</strong>
-      below to help determine the best frame size for you.
-    </p>
-  </div>
+  <div class="box">
+    <header class="box__header">
+      {% include "partials/_geometry-icon.njk" %}
+      <h2>Geometry</h2>
+    </header>
+    <div class="box__content stack">
+<p>The Whippet comes in 6 frame sizes to cover a wide range of riders. Please use the <strong>Frame Fit Calculator</strong> below to help determine the best frame size for you.</p>
   {% include "partials/_whippetGeo.njk" %}
+    </div> 
+  </div>
 </section>
 <!-- Frame Fit Calculator -->
 <section class="stack prose">
   <div class="box">
-    <header class="flex-icon p-s-m">
+    <header class="box__header">
       {% include "partials/_calculator-icon.njk" %}
       <h2>Frame Fit Calculator</h2>
     </header>
     {% include "partials/_whippetFitCalc.njk" %}
   </div>
-  <div class="accordion box">
+  <div class="accordion">
     <details name="ff-group">
       <summary>What's the best way to determine my Whippet frame size?</summary>
       <div class="stack">
@@ -159,7 +158,7 @@ photos:
     </details>
     <details name="ff-group">
       <summary>Measuring instructions</summary>
-      <div class="flow">
+      <div>
         <h3>Find your fit fast</h3>
         <p>
           <strong>This process should take around 10 minutes.</strong>
@@ -172,7 +171,7 @@ photos:
           <li>Piece of paper</li>
         </ul>
         <h3>Step 1: Bike setup</h3>
-        <ol class="list ol">
+        <ol>
           <li>
             Place your bike along an inside corner of a room with the rear wheel
             touching one wall and the bike positioned parallel with the adjacent
@@ -201,7 +200,7 @@ photos:
           </li>
         </ul>
         <h3>Step 2: Measure handlebar stack</h3>
-        <ol class="list ol">
+        <ol>
           <li>
             Measure vertically from the floor to the center of the handlebar
             near the stem and write down your measurement (y1).
@@ -216,7 +215,7 @@ photos:
           </li>
         </ol>
         <h3>Step 3: Measure handlebar reach</h3>
-        <ol class="list ol">
+        <ol>
           <li>
             Measure horizontally from the rear wall to the center of your
             handlebars near the stem and write down your measurement (x1).
@@ -235,13 +234,13 @@ photos:
   </div>
 </section>
 <!-- Frame specs -->
-<section class="cluster-xl">
+<section class="cluster">
   <div class="box prose">
-    <header class="flex-icon p-s-m">
+    <header class="box__header">
       {% include "partials/_list-icon.njk" %}
       <h2>Frame specs</h2>
     </header>
-    <dl class="p-s-m">
+    <dl class="box__content">
       <dt>Max tire width</dt>
       <dd>2.25" (57 mm)</dd>
       <dt>Hub dimensions</dt>
@@ -272,11 +271,11 @@ photos:
   </div>
   <!-- Raw materials -->
   <div class="box prose">
-    <header class="flex-icon p-s-m">
+    <header class="box__header">
       {% include "partials/_diamond-icon.njk" %}
       <h2>Raw materials</h2>
     </header>
-    <dl class="p-s-m">
+    <dl class="box__content">
       <dt>Headtube</dt>
       <dd>Paragon Machine Works CNC-machined tapered EC34/EC44</dd>
       <dt>Toptube</dt>
@@ -305,11 +304,11 @@ photos:
   </div>
   <!-- Paint scheme -->
   <div class="box prose">
-    <header class="flex-icon p-s-m">
+    <header class="box__header">
       {% include "partials/_paint-icon.njk" %}
       <h2>Paint scheme</h2>
     </header>
-    <div class="p-s-m stack">
+    <div class="box__content stack">
       {% image "/assets/img/whippet-paint.jpg", "A tube showing the sample paint
       scheme of ruby red with baby blue graphics", "(min-width: 1660px) 687px,
       (min-width: 700px) calc(8.51vw + 547px), calc(92.63vw - 26px)" %}
@@ -337,11 +336,11 @@ photos:
   </div>
   <!-- Fork details -->
   <div class="box prose">
-    <header class="flex-icon p-s-m">
+    <header class="box__header">
       {% include "partials/_knight-icon.njk" %}
       <h2>Fork</h2>
     </header>
-    <div class="p-s-m stack">
+    <div class="box__content stack">
       {% image "/assets/img/seido-fork.jpg", "A tube showing the sample paint
       scheme of ruby red with baby blue graphics", "(min-width: 1660px) 687px,
       (min-width: 700px) calc(8.51vw + 547px), calc(92.63vw - 26px)" %}
@@ -366,7 +365,7 @@ photos:
 <!-- FAQ -->
 <section class="prose stack">
   <h2>FAQ</h2>
-  <div class="accordion box">
+  <div class="accordion">
     <details name="group">
       <summary>Can I get the frame and fork custom painted?</summary>
       <div>
@@ -411,7 +410,7 @@ photos:
     </details>
     <details name="group">
       <summary>How many headset spacers can I use?</summary>
-      <div class="stack">
+      <div>
         <p>
           Seido limits the total headset spacer stack under the stem to 19mm.
         </p>
@@ -447,7 +446,7 @@ photos:
     {% for item in faq %}
     <details name="group">
       <summary>{{ item.q }}</summary>
-      <div class="stack">
+      <div>
         {{ item.a | safe }}
       </div>
     </details>

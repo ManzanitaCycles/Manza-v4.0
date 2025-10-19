@@ -1,63 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        {% set pageTitle = metaTitle or title %}
-        {% set siteTitle = site.name %}
-        {% set currentUrl = (site.url + page.url) | lower %}
-        {% set metaDesc = desc or summary or site.description %}
-        <title>
-            {% if pageTitle != siteTitle %}
-                {{ pageTitle }}
-                |
-            {% endif %}
-            {{ siteTitle }}</title>
-        <link rel="canonical" href="{{ currentUrl }}"/>
-        <meta name="description" content="{{ metaDesc }}"/>
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png"/>
-        <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#000000"/>
-        <link rel="preload" href="/assets/fonts/work-sans-v24-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="/assets/fonts/work-sans-v24-latin-italic.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="/assets/fonts/work-sans-v24-latin-700.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="/assets/fonts/ApercuCondensedPro.woff2" as="font" type="font/woff2" crossorigin>
-        <!-- capture the CSS content as a Nunjucks variable -->
-        {% set css %}
-        {% include "a.css" %}
-        {% endset %}
-        <!-- feed it through our cssmin filter to minify -->
-        <style>{{ css | cssmin | safe }}</style>
-    </head>
-    <body>
-        <header class="nav center">
-            <a href="/" class="nav__logo" aria-label="Manzanita Cycles homepage">
-                {% include "partials/_logo.njk" %}
-            </a>
-            <nav>
-                <ul class="nav__list">
-                    <li>
-                        <button class="nav__button">Bikes</button>
-                        <ul class="nav__dropdown stack box p-s-m" hidden>
-                            {% for bike in collections.bikes | sort(attribute='data.order') %}
-                            <li><a href="{{ bike.url }}">{{ bike.data.title }}<span class="fine-print">{{ bike.data.miniDesc }}</span></a></li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    <li><a href="/about/">About</a></li>
-                    <li><a href="/contact/">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main class="center stack-xl-4xl m-top-xl-4xl">
-            {{ content | safe }}
-        </main>
-        {% include "partials/_footer.njk" %}
-        {% if page.url == "/bikes/whippet/" %}
-            <script src="/assets/js/whippet.min.js" defer></script>
-        {% else %}
-            <script src="/assets/js/common.min.js" defer></script>
-        {% endif %}
-    </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{% set pageTitle = metaTitle or title %} {% set siteTitle = site.name %} {% set currentUrl = (site.url + page.url) | lower %} {% set metaDesc = desc or summary or site.description %}
+		<title>
+			{% if pageTitle != siteTitle %}
+			{{ pageTitle }}
+			| {% endif %}
+			{{ siteTitle }}
+		</title>
+		<link rel="canonical" href="{{ currentUrl }}" />
+		<meta name="description" content="{{ metaDesc }}" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+		<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#000000" />
+		<link rel="preload" href="/assets/fonts/work-sans-v24-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/assets/fonts/work-sans-v24-latin-italic.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/assets/fonts/work-sans-v24-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/assets/fonts/ApercuCondensedPro.woff2" as="font" type="font/woff2" crossorigin />
+		<style>
+			{% set cssContent = "" | inlineCSS %}
+			{{ cssContent | safe }}
+		</style>
+	</head>
+	<body>
+		<header class="nav center">
+			<a href="/" class="nav__logo" aria-label="Manzanita Cycles homepage"> {% include "partials/_logo.njk" %} </a>
+			<nav>
+				<ul class="nav__list" role="list">
+					<li>
+						<button class="nav__button">Bikes</button>
+						<ul class="nav__dropdown stack" role="list" hidden>
+							{% for bike in collections.bikes | sort(attribute='data.order') %}
+							<li>
+								<a href="{{ bike.url }}"
+									>{{ bike.data.title }}<span class="fine-print">{{ bike.data.miniDesc }}</span></a
+								>
+							</li>
+							{% endfor %}
+						</ul>
+					</li>
+					<li><a href="/about/">About</a></li>
+					<li><a href="/contact/">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="center stack-2xl-5xl m-top-2xl-5xl">
+			{{ content | safe }}
+		</main>
+		{% include "partials/_footer.njk" %} {% if page.url == "/bikes/whippet/" %}
+		<script src="/assets/js/whippet.min.js" defer></script>
+		{% else %}
+		<script src="/assets/js/common.min.js" defer></script>
+		{% endif %}
+	</body>
 </html>

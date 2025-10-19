@@ -7,105 +7,136 @@ const fs = require("fs");
 const { URL } = require("url");
 
 module.exports = function (eleventyConfig) {
-  // Passthrough assets
-  eleventyConfig.addPassthroughCopy("src/assets/favicon");
-  eleventyConfig.addPassthroughCopy("src/_redirects");
-  eleventyConfig.addPassthroughCopy("src/robots.txt");
-  eleventyConfig.addPassthroughCopy("src/assets/svg");
-  eleventyConfig.addPassthroughCopy("src/assets/fonts");
+	// Passthrough assets
+	eleventyConfig.addPassthroughCopy("src/assets/favicon");
+	eleventyConfig.addPassthroughCopy("src/robots.txt");
+	eleventyConfig.addPassthroughCopy("src/assets/svg");
+	eleventyConfig.addPassthroughCopy("src/assets/fonts");
+	eleventyConfig.addPassthroughCopy("src/assets/css");
 
-  // A filter to create absolute URLs
-  eleventyConfig.addFilter("absoluteUrl", (path, base) => {
-    try {
-      return new URL(path, base).toString();
-    } catch (e) {
-      console.error("Failed to create absolute URL:", e);
-      return path;
-    }
-  });
+	// A filter to create absolute URLs
+	eleventyConfig.addFilter("absoluteUrl", (path, base) => {
+		try {
+			return new URL(path, base).toString();
+		} catch (e) {
+			console.error("Failed to create absolute URL:", e);
+			return path;
+		}
+	});
 
-  // Eleventy Image plugin
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ["avif", "jpeg"],
-    widths: [400, 700, 800, 1200, 1800],
-    outputDir: "./public/assets/img",
-    urlPath: "/assets/img/",
-    filenameFormat: function (id, src, width, format, options) {
-      const fileSlug = path.parse(src).name;
-      return `${fileSlug}-${width}w.${format}`;
-    },
-    htmlOptions: {
-      imgAttributes: {
-        loading: "lazy",
-        decoding: "async",
-        sizes: "100vw",
-      },
-    },
-  });
+	// Custom 404 configuration for local dev server
+	eleventyConfig.setBrowserSyncConfig({
+		callbacks: {
+			ready: function (err, bs) {
+				bs.addMiddleware("*", (req, res) => {
+					// Read the content of the generated 404.html file
+					const content_404 = fs.readFileSync(eleventyConfig.dir.output + "/404.html");
 
-  // Image shortcode
-  eleventyConfig.addShortcode(
-    "image",
-    (src, alt, sizes = "auto", loading = "lazy", fetchpriority = "auto") => {
-      // Escape single and double quotes in alt text to prevent HTML issues.
-      const cleanAlt = alt.replace(/"/g, "&quot;").replace(/'/g, "&apos;");
+					// Set the 404 status code and serve the content
+					res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" });
+					res.write(content_404);
+					res.end();
+				});
+			},
+		},
+	});
 
-      // Return the complete HTML img tag with the provided attributes.
-      // The sizes and fetchpriority attributes are included by default with sensible fallbacks.
-      return `<img src="${src}" alt="${cleanAlt}" sizes="${sizes}" loading="${loading}" fetchpriority="${fetchpriority}">`;
-    }
-  );
+	// Eleventy Image plugin
+	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+		formats: ["avif", "jpeg"],
+		widths: [400, 700, 800, 1200, 1800],
+		outputDir: "./public/assets/img",
+		urlPath: "/assets/img/",
+		filenameFormat: function (id, src, width, format, options) {
+			const fileSlug = path.parse(src).name;
+			return `${fileSlug}-${width}w.${format}`;
+		},
+		htmlOptions: {
+			imgAttributes: {
+				loading: "lazy",
+				decoding: "async",
+				sizes: "100vw",
+			},
+		},
+	});
 
-  // Minify HTML output
-  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    if (outputPath && outputPath.endsWith(".html")) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-      });
-      return minified;
-    }
+	// Image shortcode
+	eleventyConfig.addShortcode("image", (src, alt, sizes = "auto", loading = "lazy", fetchpriority = "auto") => {
+		const cleanAlt = alt.replace(/"/g, "&quot;").replace(/'/g, "&apos;");
+		return `<img src="${src}" alt="${cleanAlt}" sizes="${sizes}" loading="${loading}" fetchpriority="${fetchpriority}">`;
+	});
 
-    return content;
-  });
+	// Minify HTML output
+	eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+		if (outputPath && outputPath.endsWith(".html")) {
+			let minified = htmlmin.minify(content, {
+				useShortDoctype: true,
+				removeComments: true,
+				collapseWhitespace: true,
+			});
+			return minified;
+		}
 
-  // Minify CSS
-  eleventyConfig.addFilter("cssmin", function (code) {
-    return new CleanCSS({}).minify(code).styles;
-  });
+		return content;
+	});
 
-  // Watch the JS folder for changes
-  eleventyConfig.addWatchTarget("./src/assets/js/");
+	// Define the list of CSS files to be merged and minified
+	const cssFiles = ["./src/assets/css/01-config.css", "./src/assets/css/02-reset.css", "./src/assets/css/03-components.css", "./src/assets/css/04-utilities.css"];
 
-  eleventyConfig.on("eleventy.before", async () => {
-    // Create the bundle for all pages (dropdown.js and forms.js)
-    await esbuild.build({
-      // Use the single entry point
-      entryPoints: ["./src/assets/js/common.js"],
-      // Use outfile now that there is only one entry point
-      outfile: "./public/assets/js/common.min.js",
-      bundle: true,
-      minify: true,
-      sourcemap: true,
-    });
+	// Create an asynchronous filter for inlining CSS
+	eleventyConfig.addNunjucksAsyncFilter("inlineCSS", async (content, callback) => {
+		try {
+			// 1. Read the content of all CSS files
+			let mergedCSS = "";
+			for (const file of cssFiles) {
+				// Use fs.promises.readFile for async file reading
+				const cssContent = await fs.promises.readFile(file, "utf8");
+				mergedCSS += cssContent;
+			}
 
-    // Create the bundle for the Whippet page (all four files)
-    await esbuild.build({
-      // Use the single entry point for this bundle as well
-      entryPoints: ["./src/assets/js/whippet.js"],
-      outfile: "./public/assets/js/whippet.min.js",
-      bundle: true,
-      minify: true,
-      sourcemap: true,
-    });
-  });
+			// 2. Minify the merged CSS
+			const minified = new CleanCSS().minify(mergedCSS).styles;
 
-  // Eleventy base config
-  return {
-    dir: {
-      input: "src",
-      output: "public",
-    },
-  };
+			// 3. Return the minified content to the template
+			callback(null, minified);
+		} catch (e) {
+			console.error("Error in inlineCSS filter:", e);
+			// Return an empty string in case of error
+			callback(null, "");
+		}
+	});
+
+	// Watch the JS folder for changes
+	eleventyConfig.addWatchTarget("./src/assets/js/");
+
+	eleventyConfig.on("eleventy.before", async () => {
+		// Create the bundle for all pages (dropdown.js and forms.js)
+		await esbuild.build({
+			// Use the single entry point
+			entryPoints: ["./src/assets/js/common.js"],
+			// Use outfile now that there is only one entry point
+			outfile: "./public/assets/js/common.min.js",
+			bundle: true,
+			minify: true,
+			sourcemap: true,
+		});
+
+		// Create the bundle for the Whippet page (all four files)
+		await esbuild.build({
+			// Use the single entry point for this bundle as well
+			entryPoints: ["./src/assets/js/whippet.js"],
+			outfile: "./public/assets/js/whippet.min.js",
+			bundle: true,
+			minify: true,
+			sourcemap: true,
+		});
+	});
+
+	// Eleventy base config
+	return {
+		dir: {
+			input: "src",
+			output: "public",
+		},
+	};
 };

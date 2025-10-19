@@ -2,7 +2,7 @@
     <div class="reel">
         {% for rider in quotes %}
             {% if rider.category == title %}
-                <figure class="box p-s-m stack">
+                <figure class="card stack">
                     {% image rider.img, rider.alt, "(min-width: 1380px) 346px, calc(14.15vw + 154px)" %}
                     <figcaption class="stack">
                         {% include "partials/_quote-icon.njk" %}

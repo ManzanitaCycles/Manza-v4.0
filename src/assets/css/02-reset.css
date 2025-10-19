@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url("/assets/svg/topo6.svg"), url("/assets/svg/topo-bottom.svg");
+	background-repeat: no-repeat, no-repeat;
+	background-position: top center, bottom center;
+	background-color: var(--color-bg-dark);
+	color: var(--color-text);
+	margin: var(--space-m-l);
+	font: var(--fw-regular) var(--fs-m) / var(--lh-body) var(--ff-body);
+}
+
+a {
+	color: inherit;
+}
+
+a:not([class]) {
+	text-decoration-thickness: 2px;
+	text-underline-offset: 0.25em;
+}
+
+address {
+	font-style: normal;
+}
+
+h1,
+h2,
+h3,
+.h2,
+.h3 {
+	text-wrap: balance;
+	font-family: var(--ff-display);
+	font-weight: var(--fw-bold);
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: var(--fs-2xl);
+	line-height: var(--lh-base);
+}
+
+h2,
+.h2 {
+	font-size: var(--fs-xl);
+	line-height: var(--lh-base);
+}
+
+h3,
+.h3 {
+	font-size: var(--fs-l);
+	line-height: var(--lh-small);
+}
+
+button,
+input,
+textarea {
+	font: inherit;
+	border-radius: var(--border-radius);
+}
+
+input,
+textarea {
+	border: var(--border);
+	padding: var(--space-s) var(--space-m);
+	background: var(--color-bg-light);
+	width: 100%;
+}
+
+label,
+textarea {
+	display: block;
+}
+
+textarea:not([rows]) {
+	min-height: 20em;
+}
+
+:focus-visible {
+	outline: 3px solid var(--color-secondary);
+}
+
+/* make it clear that interactive elements are interactive */
+:where(a[href], button, input:where([type="radio"]), label[for], select, summary) {
+	cursor: pointer;
+	touch-action: manipulation;
+}
+
+img,
+picture {
+	max-inline-size: 100%;
+	block-size: auto;
+	display: block;
+	border-radius: var(--border-radius);
+}
+
+/* Ensure the hidden attribute is always respected */
+[hidden] {
+	display: none !important;
+}

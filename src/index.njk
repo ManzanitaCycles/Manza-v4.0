@@ -8,17 +8,17 @@ layout: layouts/base.njk
     for your next <span class="highlight">adventure</span></h1>
 </header>
 {% for bike in collections.bikes | sort(attribute='data.order') %}
-    <article class="sidebar box p-s-m">
+    <article class="card stack sidebar">
         <a href="{{ bike.url }}">
             {% if loop.index0 === 0 %}
-                {% image bike.data.image, bike.data.alt, "(min-width: 1560px) 850px, (min-width: 1160px) calc(85.53vw - 467px), (min-width: 1060px) 900px, calc(89.73vw - 33px)", "eager", "high" %}
+                {% image bike.data.image, bike.data.alt, "(min-width: 1560px) 852px, (min-width: 1060px) calc(84.17vw - 444px), calc(94.19vw - 47px)", "eager", "high" %}
             {% else %}
-                {% image bike.data.image, bike.data.alt, "(min-width: 1560px) 850px, (min-width: 1160px) calc(85.53vw - 467px), (min-width: 1060px) 900px, calc(89.73vw - 33px)" %}
+                {% image bike.data.image, bike.data.alt, "(min-width: 1560px) 852px, (min-width: 1060px) calc(84.17vw - 444px), calc(94.19vw - 47px)" %}
             {% endif %}
         </a>
         <div class="stack">
             <h2>{{ bike.data.title }}</h2>
-            <p class="muted m-top-2xs">{{ bike.data.desc }}</p>
+            <p class="muted m-top-0">{{ bike.data.desc }}</p>
             <p><a class="button" href="{{ bike.url }}">View the {{ bike.data.title }} &rarr;</a></p>
         </div>
     </article>

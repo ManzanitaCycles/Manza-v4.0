@@ -1,0 +1,116 @@
+:root {
+	/* =====================
+     TYPOGRAPHY & SIZING
+     ===================== */
+	/* Font Sizes (Utopia fluid scaling) */
+	--fs-xs: clamp(0.75rem, 0.6905rem + 0.2381vw, 0.875rem);
+	--fs-s: clamp(0.875rem, 0.8155rem + 0.2381vw, 1rem);
+	--fs-m: clamp(1rem, 0.881rem + 0.4762vw, 1.25rem);
+	--fs-l: clamp(1.25rem, 0.9524rem + 1.1905vw, 1.875rem);
+	--fs-xl: clamp(1.75rem, 1.3333rem + 1.6667vw, 2.625rem);
+	--fs-2xl: clamp(2.25rem, 1.3295rem + 4.0909vw, 4.5rem);
+
+	/* Font families */
+	--ff-display: "Apercu Condensed Pro", impact, system-ui, sans-serif;
+	--ff-body: "Work Sans", system-ui, sans-serif;
+	--ff-serif: Georgia, "Times New Roman", Times, serif;
+
+	/* Font weights */
+	--fw-regular: 400;
+	--fw-bold: 700;
+
+	/* Spacing (Utopia fluid scaling) */
+	--space-xs-fixed: 0.2rem;
+	--space-xs: clamp(0.5rem, 0.4405rem + 0.2381vw, 0.625rem);
+	--space-s: clamp(0.75rem, 0.6607rem + 0.3571vw, 0.9375rem);
+	--space-m: clamp(1rem, 0.881rem + 0.4762vw, 1.25rem);
+	--space-l: clamp(1.25rem, 0.9524rem + 1.1905vw, 1.875rem);
+	--space-xl: clamp(1.75rem, 1.3333rem + 1.6667vw, 2.625rem);
+	--space-2xl: clamp(3rem, 2.6429rem + 1.4286vw, 3.75rem);
+
+	/* Spacing Pairs (Specific fluid scales) */
+	--space-m-l: clamp(1rem, 0.5833rem + 1.6667vw, 1.875rem);
+	--space-2xl-5xl: clamp(3rem, -0.3333rem + 13.3333vw, 10rem);
+
+	/* Text Spacing */
+	--letter-spacing: 0.07em;
+	--lh-base: 1;
+	--lh-small: 1.2;
+	--lh-body: 1.5;
+
+	/* =====================
+     Layout sizing
+     ===================== */
+
+	/* Layout widths */
+	--width-prose: min(55ch, 100%);
+	--width-full: min(90rem, 100%);
+	--width-narrow: min(35ch, 100%);
+
+	/* =====================
+     COLORS
+     ===================== */
+	--color-bg-dark: hsl(0, 0%, 90%);
+	--color-bg: hsl(0, 0%, 97%);
+	--color-bg-light: hsl(0, 0%, 100%);
+	--color-text: hsl(0, 0%, 15%);
+	--color-text-muted: hsl(0, 0%, 40%);
+	--color-border: hsl(0, 0%, 88%);
+
+	--color-primary: hsl(179, 100%, 35%);
+	--color-primary-dark: hsl(184, 90%, 10%);
+	--color-secondary: hsl(18, 60%, 58%);
+	--color-secondary-dark: hsl(13, 80%, 40%);
+	--color-secondary-faded: hsl(25, 70%, 85%);
+	--color-error: hsl(10, 80%, 30%);
+
+	/* =====================
+     BORDERS & SHADOWS
+     ===================== */
+	--border-radius: 10px;
+	--border-width: 1px;
+	--border: var(--border-width) solid var(--color-border);
+
+	--shadow-inset: inset 0 1px 2px #ffffff30;
+	--shadow-s: var(--shadow-inset), 0 1px 1px #00000030, 0 2px 2px #00000015;
+	--shadow-m: var(--shadow-inset), 0 2px 2px #00000030, 0 4px 4px #00000015;
+	--shadow-l: var(--shadow-inset), 0 8px 8px #00000030, 0 16px 16px #00000015;
+}
+
+/* =================================================================
+   TYPOGRAPHY
+   ================================================================= */
+
+/* Apercu Condensed Pro */
+@font-face {
+	font-family: "Apercu Condensed Pro";
+	font-style: normal;
+	font-weight: var(--fw-bold);
+	src: url("/assets/fonts/ApercuCondensedPro.woff2") format("woff2");
+	font-display: swap;
+}
+
+/* work-sans-regular - latin */
+@font-face {
+	font-display: swap;
+	font-family: "Work Sans";
+	font-style: normal;
+	font-weight: 400;
+	src: url("/assets/fonts/work-sans-v24-latin-regular.woff2") format("woff2");
+}
+/* work-sans-italic - latin */
+@font-face {
+	font-display: swap;
+	font-family: "Work Sans";
+	font-style: italic;
+	font-weight: 400;
+	src: url("/assets/fonts/work-sans-v24-latin-italic.woff2") format("woff2");
+}
+/* work-sans-700 - latin */
+@font-face {
+	font-display: swap;
+	font-family: "Work Sans";
+	font-style: normal;
+	font-weight: 700;
+	src: url("/assets/fonts/work-sans-v24-latin-700.woff2") format("woff2");
+}

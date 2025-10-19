@@ -1,25 +1,25 @@
-<form id="contact-form" class="stack box p-s-m contact-form" action="https://usebasin.com/f/319261c18814" method="POST">
+<form id="contact-form" class="stack card" action="https://usebasin.com/f/319261c18814" method="POST">
     <!-- Honeypot field -->
-    <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off"/>
+    <input type="text" name="honeypot" tabindex="-1" autocomplete="off" hidden />
     <input type="hidden" name="formStart"/>
-    <div class="m-top-0">
-        <label for="name">Name</label>
+    <div class="m-top-0 stack-xs">
+        <label class="fine-print" for="name">Name</label>
         <input type="text" id="name" name="name" required autocomplete="name"/>
-        <span class="error-message">Enter your name.</span>
+        <p class="error-message" hidden>{% include "partials/_warning-icon.njk" %} Enter your name.</p>
     </div>
-    <div>
-        <label for="email">Email</label>
+    <div class="stack-xs">
+        <label class="fine-print" for="email">Email</label>
         <input type="email" id="email" name="email" required autocomplete="email"/>
-        <span class="error-message">Enter a valid email address.</span>
+        <p class="error-message" hidden>{% include "partials/_warning-icon.njk" %} Enter a valid email address.</p>
     </div>
-    <div>
-        <label for="message">Message</label>
+    <div class="stack-xs">
+        <label class="fine-print" for="message">Message</label>
         <textarea id="message" name="message" required></textarea>
-        <span class="error-message">Enter a message.</span>
+        <p class="error-message" hidden>{% include "partials/_warning-icon.njk" %} Enter a message.</p>
     </div>
-    <button type="submit" class="button">Send</button>
+    <button type="submit" class="button full-width form-button">Send message</button>
 </form>
-<dialog id="contact-modal" class="modal stack box p-s-m">
+<dialog id="contact-modal" class="modal stack">
     {% include "partials/_close-btn.njk" %}
     <p>✅ <strong>Message sent.</strong></p>
 </dialog>

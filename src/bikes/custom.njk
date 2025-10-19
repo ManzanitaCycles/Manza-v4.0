@@ -53,15 +53,15 @@ photos:
 {% include "partials/_bikes-hero-section.njk" %}
 <!-- Pricing -->
 <section>
-  <div class="box prose">
-    <header class="flex-icon p-s-m">
+  <div class="box narrow">
+    <header class="box__header">
       {% include "partials/_sales-tag-icon.njk" %}
       <h2>Pricing</h2>
     </header>
-    <div class="p-s-m two-columns">
-      <div class="stack">
+    <div class="box__content stack-xl">
+      <div class="stack-small">
         <p class="fine-print">Frame</p>
-        <h3 class="m-top-2xs h2">$2,600</h3>
+        <h3 class="h2 m-top-0">$2,600</h3>
         <p class="fine-print">Includes:</p>
         <ul class="m-top-0 list">
           <li>Powder coat by Dark Matter Finishing</li>
@@ -69,9 +69,9 @@ photos:
           <li>Stainless bottle bolts</li>
         </ul>
       </div>
-      <div class="stack">
+      <div class="stack-small">
         <p class="fine-print">Steel fork</p>
-        <h3 class="m-top-2xs h2">$600</h3>
+        <h3 class="h2 m-top-0">$600</h3>
         <p class="fine-print">Includes:</p>
         <ul class="m-top-0 list">
           <li>Powder coated to match frame color scheme</li>
@@ -91,7 +91,7 @@ photos:
   <div class="accordion box">
     <details name="group">
       <summary>What happens after I place a deposit?</summary>
-      <div class="stack">
+      <div>
         <p>
           I'll reach out to you to discuss your project in detail and to provide
           a more accurate estimate when the bike will be ready to deliver.
@@ -143,7 +143,7 @@ photos:
     {% for item in faq %}
     <details name="group">
       <summary>{{ item.q }}</summary>
-      <div class="stack">
+      <div>
         {{ item.a | safe }}
       </div>
     </details>
