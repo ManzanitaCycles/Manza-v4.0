@@ -314,6 +314,10 @@ thead th {
 	background: var(--color-secondary);
 }
 
+thead th:first-child {
+	text-align: left;
+}
+
 tbody tr th,
 tbody tr td {
 	background: var(--color-bg-dark);

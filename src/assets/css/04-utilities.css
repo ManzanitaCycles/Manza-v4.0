@@ -90,3 +90,8 @@
 	font-weight: var(--fw-bold);
 	color: var(--color-text);
 }
+
+.fs-large {
+	font-size: var(--fs-l);
+	line-height: var(--lh-small);
+}
