@@ -403,7 +403,7 @@ ol li::before {
 /* Reset default label styles */
 .kit-builder label {
 	color: var(--color-text);
-	line-height: var(--body-line-height);
+	line-height: var(--lh-base);
 }
 /* Hide default radio buttons */
 .kit-builder input[type="radio"] {
