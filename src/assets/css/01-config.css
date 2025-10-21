@@ -57,8 +57,9 @@
 	--color-text-muted: hsl(0, 0%, 33%);
 	--color-border: hsl(0, 0%, 88%);
 
-	--color-primary: hsl(178, 100%, 36%);
-	--color-primary-dark: hsl(178, 100%, 6%);
+	--color-primary: hsl(178, 70%, 50%);
+	--color-primary-darkish: hsl(183, 80%, 35%);
+	--color-primary-dark: hsl(178, 100%, 10%);
 	--color-secondary: hsl(18, 60%, 58%);
 	--color-secondary-dark: hsl(13, 80%, 40%);
 	--color-secondary-faded: hsl(25, 70%, 85%);

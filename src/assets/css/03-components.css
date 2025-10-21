@@ -43,7 +43,7 @@
 .button {
 	border: none;
 	padding: var(--space-s) var(--space-m);
-	background: var(--color-primary);
+	background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-darkish));
 	border-radius: var(--border-radius);
 	text-decoration: none;
 	color: var(--color-primary-dark);
@@ -52,6 +52,11 @@
 	text-transform: uppercase;
 	display: inline-block;
 	letter-spacing: var(--letter-spacing);
+	transition: transform 0.2s ease-in-out;
+}
+
+.button:hover {
+	transform: scale(1.025);
 }
 
 .form-button {
@@ -403,7 +408,7 @@ ol li::before {
 /* Reset default label styles */
 .kit-builder label {
 	color: var(--color-text);
-	line-height: var(--lh-base);
+	line-height: var(--lh-body);
 }
 /* Hide default radio buttons */
 .kit-builder input[type="radio"] {
