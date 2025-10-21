@@ -50,15 +50,15 @@
 	/* =====================
      COLORS
      ===================== */
-	--color-bg-dark: hsl(0, 0%, 90%);
+	--color-bg-dark: hsl(0, 0%, 93%);
 	--color-bg: hsl(0, 0%, 97%);
 	--color-bg-light: hsl(0, 0%, 100%);
 	--color-text: hsl(0, 0%, 15%);
-	--color-text-muted: hsl(0, 0%, 40%);
+	--color-text-muted: hsl(0, 0%, 33%);
 	--color-border: hsl(0, 0%, 88%);
 
-	--color-primary: hsl(179, 100%, 35%);
-	--color-primary-dark: hsl(184, 90%, 10%);
+	--color-primary: hsl(178, 100%, 36%);
+	--color-primary-dark: hsl(178, 100%, 6%);
 	--color-secondary: hsl(18, 60%, 58%);
 	--color-secondary-dark: hsl(13, 80%, 40%);
 	--color-secondary-faded: hsl(25, 70%, 85%);

@@ -414,12 +414,6 @@ ol li::before {
 	border-color: var(--color-secondary);
 	background: var(--color-bg-light);
 }
-/* De-emphasize less important text */
-.kit-builder__price,
-.kit-builder legend {
-	color: var(--color-text-muted);
-	font-size: var(--fs-s);
-}
 
 .calc__buttons {
 	display: flex;

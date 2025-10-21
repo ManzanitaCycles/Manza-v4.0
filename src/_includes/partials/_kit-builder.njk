@@ -16,7 +16,7 @@
     {% for category, items in components %}
         {% set category_slug = category | lower | replace(' ', '_') %}
         <fieldset class="kit-builder__group">
-        <legend>{{ category }}</legend>
+        <legend class="fine-print">{{ category }}</legend>
         {% set base = items[0] %}
         {% for item in items %}
             {% set diff = item.price - base.price %}
