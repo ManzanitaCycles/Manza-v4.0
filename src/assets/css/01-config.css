@@ -85,7 +85,7 @@
 @font-face {
 	font-family: "Apercu Condensed Pro";
 	font-style: normal;
-	font-weight: var(--fw-bold);
+	font-weight: 700;
 	src: url("/assets/fonts/ApercuCondensedPro.woff2") format("woff2");
 	font-display: swap;
 }
