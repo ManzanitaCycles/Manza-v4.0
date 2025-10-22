@@ -106,3 +106,11 @@ picture {
 [hidden] {
 	display: none !important;
 }
+
+/* Superscript */
+sup {
+	font-size: 0.75em;
+	line-height: 0;
+	vertical-align: super;
+	font-weight: var(--fw-regular);
+}

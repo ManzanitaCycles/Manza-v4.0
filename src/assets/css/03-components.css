@@ -300,9 +300,10 @@ table {
 	text-align: left;
 	width: 100%;
 	border: var(--border);
-	border-color: var(--color-secondary);
+	border-color: var(--color-border);
 	font-size: var(--fs-s);
 	white-space: nowrap;
+	background: var(--color-bg-light);
 }
 
 th,
@@ -311,21 +312,21 @@ td {
 }
 
 thead th {
-	background: var(--color-secondary);
+	border-bottom: var(--border);
 }
 
 thead th:first-child {
 	text-align: left;
+	background: var(--color-bg-light);
 }
 
 tbody tr th,
 tbody tr td {
-	background: var(--color-bg-dark);
+	background: var(--color-bg-light);
 }
 
-tbody tr:nth-child(odd) th,
-tbody tr:nth-child(odd) td {
-	background: var(--color-bg-light);
+tbody td {
+	color: var(--color-text-muted);
 }
 
 th:first-child {
@@ -340,7 +341,7 @@ th:first-child::after {
 	inset-inline-end: 0;
 	width: 1px;
 	height: 100%;
-	background: var(--color-secondary);
+	background: var(--color-border);
 }
 
 thead th,
