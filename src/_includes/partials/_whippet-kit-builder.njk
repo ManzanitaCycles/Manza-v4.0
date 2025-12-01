@@ -1,0 +1,93 @@
+<!-- 1. PRE-CALCULATION: Sum up the first item of every category to get the base price -->
+{% set starting_total = 0 %}
+{% for category_name, items in components %}
+    {% set starting_total = starting_total + items[0].price %}
+{% endfor %}
+
+<section class="center overline flow">
+    <h2>Kit builder</h2>
+    <p>Select component bundles to estimate your build cost.</p>
+
+    <form
+        class="kit-builder mt-lg flow"
+        oninput="
+            /* 2. INJECT STARTING TOTAL AS BASE */
+            const base = {{ starting_total }};
+
+            /* Dynamically create variables for each category */
+            {% for category_name, items in components %}
+            {% set safe_id = category_name | replace(' ', '_') | lower %}
+            const {{ safe_id }}_val = parseInt({{ safe_id }}.value) || 0;
+            {% endfor %}
+
+            // Calculate total dynamically (Base + Upgrade Deltas)
+            const result = base
+            {% for category_name, items in components %}
+            {% set safe_id = category_name | replace(' ', '_') | lower %}
+                + {{ safe_id }}_val
+            {% endfor %};
+
+            // Update the output tag
+            total.value = result;
+        "
+    >
+
+        <!-- TOTAL SECTION -->
+        <footer>
+            <h3>Estimated Total:
+                $<output name="total">{{ starting_total }}</output>
+            </h3>
+        </footer>
+
+        <!-- DYNAMIC CATEGORY LOOP -->
+        {% for category_name, items in components %}
+        {% set safe_id = category_name | replace(' ', '_') | lower %}
+
+        <!-- Capture the price of the first item (default) in this specific category -->
+        {% set category_base_price = items[0].price %}
+
+        <fieldset>
+            <legend class="fine-print">{{ category_name }}</legend>
+            <div class="switcher switcher-sm-col mt-sm">
+
+            {% for item in items %}
+
+            <!-- Calculate the price difference (Delta) for this item -->
+            {% set price_diff = item.price - category_base_price %}
+
+            <label>
+                <input
+                    type="radio"
+                    class="sr-only"
+                    name="{{ safe_id }}"
+                    value="{{ price_diff }}"
+                    {% if loop.first %}checked{% endif %}
+                >
+                <p>{{ item.name }}</p>
+                <p class="mt-sm">
+                    {% if price_diff == 0 %}
+                    + $0
+                    {% else %}
+                    + ${{ price_diff }}
+                    {% endif %}
+                </p>
+            </label>
+            {% endfor %}
+
+            </div>
+        </fieldset>
+        {% endfor %}
+
+    </form>
+    <div>
+    <details>
+        <summary>Cockpit details</summary>
+        {% include "partials/_whippet-cockpit-details.njk" %}
+    </details>
+    <details>
+        <summary>Drivetrain details</summary>
+        {% include "partials/_whippet-drivetrain-details.njk" %}
+    </details>
+    </div>
+    <p class="fine-print">Pricing and parts subject to change. Saddle and pedals not included but can be added. Substitutions available.</p>
+</section>

@@ -1,9 +1,17 @@
-<section class="sidebar">
-    {% image image, alt, "(min-width: 1560px) 911px, (min-width: 1000px) calc(85vw - 398px), calc(97.21vw - 24px)", "eager", "high" %}
-    <div class="stack">
-        <p class="fine-print">{{ subTitle }}</p>
-        <h1 class="m-top-0">{{ title }}</h1>
-        <p class="m-top-0 muted">{{ desc }}</p>
-        <p><a href="{{ depositLink }}" class="button">Place deposit</a></p>
-    </div>
+<section class="flow-thru">
+	<figure class="center feature">
+		<img src="{{ image }}" alt="{{ alt }}" sizes="(min-width: 1060px) 960px, 93.51vw" loading="eager" fetchpriority="high" />
+	</figure>
+	<div class="center">
+		<hgroup>
+			<p class="fine-print">{{ subTitle }}</p>
+			<h1 class="mt-0">{{ title }}</h1>
+		</hgroup>
+		<p class="muted">{{ desc }}</p>
+		<p>
+			<strong>{{ price }}</strong>
+		</p>
+		<p><a href="{{ depositLink }}" class="btn">Place deposit</a></p>
+		<p class="fine-print mt-sm">Secure your spot in the queue for {{ deposit }}.</p>
+	</div>
 </section>

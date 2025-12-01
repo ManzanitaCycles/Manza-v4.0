@@ -1,0 +1,38 @@
+<div class="overflow-scroll">
+		<table class="kit">
+			<thead>
+				<tr>
+					<th scope="col">Parts</th>
+					{% for item in components.Cockpit %}
+					<th scope="col">{{ item.name }}</th>
+					{% endfor %}
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">Handlebar</th>
+					<td>Ritchey Comp Butano</td>
+					<td>Ritchey WCS Butano</td>
+					<td>Enve SES AR</td>
+				</tr>
+				<tr>
+					<th scope="row">Handlebar tape</th>
+					<td>MSW anti-slip gel</td>
+					<td>MSW anti-slip gel</td>
+					<td>MSW anti-slip gel</td>
+				</tr>
+				<tr>
+					<th scope="row">Stem</th>
+					<td>Ritchey Comp 4-axis</td>
+					<td>Ritchey WCS Toyon</td>
+					<td>Fairwheel ultralight</td>
+				</tr>
+				<tr>
+					<th scope="row">Seatpost</th>
+					<td>Ritchey Comp 2-bolt</td>
+					<td>Ritchey WCS 1-bolt</td>
+					<td>Ritchey Superlogic Flexlogic 1-bolt</td>
+				</tr>
+			</tbody>
+		</table>
+</div>

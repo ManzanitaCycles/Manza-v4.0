@@ -1,0 +1,50 @@
+<div class="overflow-scroll">
+		<table class="kit">
+			<thead>
+				<tr>
+					<th scope="col">Parts</th>
+					{% for item in components.Drivetrain %}
+					<th scope="col">{{ item.name }}</th>
+					{% endfor %}
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">Shifters</th>
+					<td>Shimano GRX 820</td>
+					<td>Sram Rival AXS</td>
+					<td>Sram Force AXS</td>
+				</tr>
+				<tr>
+					<th scope="row">Cranks</th>
+					<td>Shimano GRX 820</td>
+					<td>Sram Rival Wide</td>
+					<td>Sram Force Wide</td>
+				</tr>
+				<tr>
+					<th scope="row">Chain</th>
+					<td>Shimano XT 12s</td>
+					<td>Sram Rival Flattop 12s</td>
+					<td>Sram Force Flattop 12s</td>
+				</tr>
+				<tr>
+					<th scope="row">Cassette</th>
+					<td>Shimano XT 10-51t</td>
+					<td>Sram GX T-type 10-52t</td>
+					<td>Sram X0 T-type 10-52t</td>
+				</tr>
+				<tr>
+					<th scope="row">Rear derailleur</th>
+					<td>Shimano GRX 820 long cage</td>
+					<td>Sram GX T-type</td>
+					<td>Sram X0 T-type</td>
+				</tr>
+				<tr>
+					<th scope="row">Rotors</th>
+					<td>Shimano CL800</td>
+					<td>Sram Centerline X</td>
+					<td>Sram Centerline X</td>
+				</tr>
+			</tbody>
+		</table>
+</div>

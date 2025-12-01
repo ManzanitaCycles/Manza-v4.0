@@ -1,0 +1,33 @@
+<section class="center">
+	<h2>Common questions answered</h2>
+	<details class="mt-lg" name="group">
+		<summary>What happens after I place a deposit?</summary>
+		<p>I'll reach out to you to discuss your project in detail and to provide a more accurate estimate when the bike will be ready to deliver.</p>
+		<p>Here's an idea of the process:</p>
+		<ol>
+			<li>We'll discuss your fit, your riding preferences, and all the goals you have for your custom bike.</li>
+			<li>I'll provide a drawing of the bike that we'll review together and make any changes until it's just right.</li>
+			<li>
+				When the drawing is approved, I'll order the raw materials for the frame and begin to order any components if you're opting for a complete build. At this time I'll request a payment of
+				50% of the remaining balance.
+			</li>
+			<li>I'll make your frame and send it to out to get painted.</li>
+			<li>When it returns from paint, I'll build up the bike and perform a final quality check before delivery.</li>
+			<li>Once the final payment is made, I'll ship you your new bike!</li>
+		</ol>
+	</details>
+	<details name="group">
+		<summary>How quickly can I get my custom frame?</summary>
+		<p>Typical turnaround time is 4 months, but many factors can change this estimate. Please <a href="/contact">contact me</a> to get a more accurate estimate.</p>
+	</details>
+	<details name="group">
+		<summary>Can I get the frame and fork custom painted?</summary>
+		<p>Yes you can. <a href="/contact/">Contact me</a> for pricing and turnaround time.</p>
+	</details>
+	{% for item in faq %}
+	<details name="group">
+		<summary>{{ item.q }}</summary>
+		{{ item.a | safe }}
+	</details>
+	{% endfor %}
+</section>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 	{% include "partials/_site-head.njk" %}
 	<body>
 		{% include "partials/_site-header.njk" %}
 		<main>
-			{{ content | safe }}
+			<div class="center flow">
+				<h1>{{ title }}</h1>
+				{{ content | safe }}
+			</div>
 		</main>
-		{% include "partials/_site-footer.njk" %}
 	</body>
 </html>

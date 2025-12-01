@@ -1,25 +1,9 @@
 ---
-title: Home | Steel bike frames
+title: Home
 layout: layouts/base.njk
 ---
 
-<header class="center">
-    <h1>Steel bike frames<br>
-    for your next <span class="highlight">adventure</span></h1>
-</header>
-{% for bike in collections.bikes | sort(attribute='data.order') %}
-    <article class="card stack sidebar">
-        <a href="{{ bike.url }}">
-            {% if loop.index0 === 0 %}
-                {% image bike.data.image, bike.data.alt, "(min-width: 1560px) 852px, (min-width: 1060px) calc(84.17vw - 444px), calc(94.19vw - 47px)", "eager", "high" %}
-            {% else %}
-                {% image bike.data.image, bike.data.alt, "(min-width: 1560px) 852px, (min-width: 1060px) calc(84.17vw - 444px), calc(94.19vw - 47px)" %}
-            {% endif %}
-        </a>
-        <div class="stack">
-            <h2>{{ bike.data.title }}</h2>
-            <p class="muted m-top-0">{{ bike.data.desc }}</p>
-            <p><a class="button" href="{{ bike.url }}">View the {{ bike.data.title }} &rarr;</a></p>
-        </div>
-    </article>
-{% endfor %}
+<section class="center">
+	<h1 class="highlight">{{ site.desc }}</h1>
+	{% include "partials/_bikes-list.njk" %}
+</section>

@@ -1,40 +1,44 @@
 {
-  "Contact points": [
+  "Cockpit": [
     {
       "name": "Ritchey Comp",
-      "price": 177
+      "price": 195
     },
     {
       "name": "Ritchey WCS",
-      "price": 319
+      "price": 329
     },
     {
-      "name": "Enve",
-      "price": 818
+      "name": "Lightweight blend",
+      "price": 710
     }
   ],
   "Drivetrain": [
     {
-      "name": "Shimano GRX Mechanical Mullet",
+      "name": "Shimano GRX mechanical",
       "price": 1273
     },
     {
-      "name": "Sram Rival/GX AXS Mullet",
-      "price": 1594
+      "name": "Sram Rival/GX wireless",
+      "price": 1703
     },
     {
-      "name": "Special Blend Sram AXS Mullet",
-      "price": 1847
+      "name": "Sram Force/X0 wireless",
+      "price": 2399
     }
   ],
   "Wheels": [
     {
-      "name": "Hunt 4 Season Gravel",
-      "price": 469
+      "name": "Hunt 4-Season Alloy Gravel",
+      "price": 451
     },
     {
       "name": "Hunt 35 Carbon Gravel",
-      "price": 927
+      "price": 829
+    },
+    {
+      "name": "Reserve 40|44 GR",
+      "price": 1600
     }
   ],
   "Tires": [

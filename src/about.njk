@@ -1,34 +1,47 @@
 ---
-title: Simple machines built right
+title: Simple bikes built right
 desc: Your new bike should disappear under you so you can focus on your adventure.
 permalink: /about/
 layout: layouts/page.njk
-image: /assets/img/about-blue-ridge-parkway-tour.jpg
+image: /img/about-blue-ridge-parkway-tour.jpg
 alt: Nick and Carrie on a bike tour on the Blue Ridge Parkway
 testimonial:
-    image: /assets/img/rachel-quote.jpg
+    image: /img/rachel-quote.jpg
     alt: Manzanita touring bike in Marin Headlands
     quote: I just got back from my first bikepacking trip and I was so grateful that I had my Manzanita to accompany me.
     name: Rachel B.
 ---
 
-<p class="fs-large">I know how important it is to have a reliable machine, because a mechanical failure can ruin a ride or a trip.</p>
+<p>I know how important it is to have a reliable machine, because a mechanical failure can ruin a ride or a trip.</p>
 
 <p>That's why I made my first bicycle frame in 2007. I wanted something I could trust during a 5-week trip around Iceland.</p>
 
-<p>I believe steel is the ideal material for a bicycle: strong, durable, easy to work with, a joy to ride, and, frankly, beautiful. There's just something about those skinny tubes that makes me smile.</p>
+<p>
+	I believe steel is the ideal material for a bicycle: strong, durable, easy to work with, a joy to ride, and, frankly, beautiful. There's just something about those skinny tubes that makes me
+	smile.
+</p>
 
-{% image image, alt, "(min-width: 1660px) 687px, (min-width: 700px) calc(8.51vw + 547px), calc(92.63vw - 26px)", "eager", "high" %}
+<figure><img src="{{ image }}" alt="{{ alt }}" sizes="(min-width: 620px) 544px, 92vw" loading="eager" fetchpriority="high" /></figure>
 
-<p class="fs-large">My goal is to build steel bicycles that are dependable, fun, and tailored to your adventures.</p>
+<h2>Built for your adventures</h2>
 
-<p>Whether you're after a racy gravel bike <a href="/bikes/whippet">like the Whippet</a>, a fun-loving hardtail <a href="/bikes/manifesto">like the Manifesto</a>, or a <a href="/bikes/custom">one-of-a-kind custom build</a>, I promise to deliver you a bicycle you can count on ride after ride.</p>
+<p>My goal is to build steel bicycles that are dependable, fun, and tailored to your adventures.</p>
 
-<figure class="card stack narrow">
-    {% image testimonial.image, testimonial.alt, "(min-width: 1640px) 375px, (min-width: 400px) calc(4.84vw + 297px), calc(100vw - 64px)" %}
-    <figcaption class="stack">
-        {% include "partials/_quote-icon.njk" %}
-        <p class="m-top-0 quote-text">{{ testimonial.quote }}</p>
-        <p class="fine-print">{{ testimonial.name }}</p>
-    </figcaption>
+<p>
+	Whether you're after a racy gravel bike <a href="/bikes/whippet">like the Whippet</a>, a fun-loving hardtail <a href="/bikes/manifesto">like the Manifesto</a>, or a
+	<a href="/bikes/custom">one-of-a-kind custom build</a>, I promise to deliver you a bicycle you can count on ride after ride.
+</p>
+
+<figure class="sidebar-sm mt-2xl">
+	<div>
+		<img src="{{ testimonial.image }}" alt="{{ testimonial.alt }}" sizes="(min-width: 620px) 544px, 92vw" />
+	</div>
+	<figcaption class="highlight flow">
+		<blockquote>
+			<p>&ldquo;{{ testimonial.quote }}&rdquo;</p>
+			<footer>
+				<cite>{{ testimonial.name }}</cite>
+			</footer>
+		</blockquote>
+	</figcaption>
 </figure>

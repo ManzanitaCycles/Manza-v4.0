@@ -1,0 +1,21 @@
+<header class="center">
+	<a href="/" aria-label="Homepage">{% include "partials/_site-logo.njk" %}</a>
+	<nav>
+		<ul role="list">
+			<li><button popovertarget="nav-pop">Bikes</button></li>
+			<li><a href="/about">About</a></li>
+			<li><a href="/contact">Contact</a></li>
+		</ul>
+	</nav>
+</header>
+
+<ul id="nav-pop" role="list" popover>
+	{% for bike in collections.bikes | sort(attribute='data.order') %}
+	<li>
+		<a href="{{ bike.url }}">
+			<strong>{{ bike.data.title }}</strong>
+			<span class="fine-print block">{{ bike.data.miniDesc }}</span>
+		</a>
+	</li>
+	{% endfor %}
+</ul>

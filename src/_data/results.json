@@ -1,0 +1,43 @@
+[
+	{
+		"name": "Elliot",
+		"img": "/img/elliot.jpg",
+		"alt": "Elliot riding his Manzanita to a 7th place finish at the 2025 Stetina's Paydirt.",
+		"results": [
+			{
+				"place": "7th",
+				"race": "2025 Stetina's Paydirt - Men pro"
+			},
+			{
+				"place": "2nd",
+				"race": "2025 Ruby Roubaix - Men pro"
+			},
+			{
+				"place": "9th",
+				"race": "2025 Grinduro - Men 31-40"
+			}
+		]
+	},
+	{
+		"name": "Miguel",
+		"img": "/img/miguel.jpg",
+		"alt": "Miguel riding to a 10th place finish at the 2025 Lost and Found Gravel Race.",
+		"results": [
+			{
+				"place": "10th",
+				"race": "2025 Lost and Found - Men 31-40"
+			}
+		]
+	},
+	{
+		"name": "Ward",
+		"img": "/img/ward-quote.jpg",
+		"alt": "Ward's Whippet on a training ride in Washington.",
+		"results": [
+			{
+				"place": "1st",
+				"race": "2025 Fondo Leavenworth - Men 60+"
+			}
+		]
+	}
+]

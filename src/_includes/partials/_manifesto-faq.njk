@@ -1,0 +1,49 @@
+<section class="center overline">
+	<h2>Common questions answered</h2>
+	<details class="mt-lg" name="group">
+		<summary>What's included with the frame?</summary>
+		<ul class="list">
+			<li>Wolf Tooth rear bolt-on axle</li>
+			<li>Sram Universal Derailleur Hanger</li>
+			<li>Wolf Tooth seat collar</li>
+			<li>Wolf Tooth Performance headset</li>
+			<li>Chainstay protection</li>
+			<li>3d-printed housing guides</li>
+			<li>3d-printed down tube protector guide</li>
+		</ul>
+	</details>
+	<details name="group">
+		<summary>How fast can I get my hands on a Manifesto?</summary>
+		<p>My goal is to get you a frameset within 12-16 weeks of your deposit. Full builds may take longer depending on parts availability.</p>
+	</details>
+	<details name="group">
+		<summary>What brake adapter do I need?</summary>
+		<p>
+			Make sure you choose a
+			<strong>rear</strong>,
+			<strong>IS to post mount</strong>
+			adapter for the rotor size you plan to run.
+		</p>
+	</details>
+	<details name="group">
+		<summary>Can I run a front derailleur?</summary>
+		<p>No, the bike frame is optimized for 1x drivetrains.</p>
+	</details>
+	<details name="group">
+		<summary>Can I run 650b wheels?</summary>
+		<p>The frame is designed around the height of a 29er wheel with 2.4" tires. Running 650b wheels will make your bike too low to the ground, resulting in frequent pedal strikes.</p>
+	</details>
+	<details name="group">
+		<summary>Can I over/under fork the frame?</summary>
+		<p>
+			The bike is designed for 130mm travel forks. Running a longer fork will void the warranty because it puts additional stress on the frame. But you can run a 120mm fork no problem. It'll
+			make the head tube and seat tube angles about a half degree steeper.
+		</p>
+	</details>
+	{% for item in faq %}
+	<details name="group">
+		<summary>{{ item.q }}</summary>
+		{{ item.a | safe }}
+	</details>
+	{% endfor %}
+</section>

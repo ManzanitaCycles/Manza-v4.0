@@ -1,0 +1,20 @@
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	{% set pageTitle = metaTitle or title %} {% set siteTitle = site.name %} {% set currentUrl = (site.url + page.url) | lower %} {% set metaDesc = desc or summary or site.description %}
+	<title>
+		{% if pageTitle != siteTitle %}
+		{{ pageTitle }}
+		| {% endif %}
+		{{ siteTitle }}
+	</title>
+	<link rel="canonical" href="{{ currentUrl }}" />
+	<meta name="description" content="{{ metaDesc }}" />
+	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	<!-- capture the CSS content as a Nunjucks variable -->
+	{% set css %} {% include "a.css" %} {% endset %}
+	<!-- feed it through our cssmin filter to minify -->
+	<style>
+		{{ css | cssmin | safe }}
+	</style>
+</head>

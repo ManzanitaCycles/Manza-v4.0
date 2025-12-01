@@ -1,0 +1,20 @@
+<section class="center feature overline">
+	<h2>Manzanita reviews</h2>
+	<div class="switcher mt-lg">
+		{% for quote in quotes %} {% if loop.index <= 3 %}
+		<figure class="flow-thru">
+			<div>
+				<img src="{{ quote.img }}" alt="{{ quote.alt }}" sizes="(min-width: 1060px) 304px, (min-width: 580px) 29.78vw, calc(100vw - 32px)" />
+			</div>
+			<figcaption class="highlight">
+				<blockquote>
+					<p>&ldquo;{{ quote.text }}&rdquo;</p>
+					<footer>
+						<cite>{{ quote.name }}</cite>
+					</footer>
+				</blockquote>
+			</figcaption>
+		</figure>
+		{% endif %} {% endfor %}
+	</div>
+</section>

@@ -1,0 +1,60 @@
+<section class="center overline">
+	<h2>Common questions answered</h2>
+	<details class="mt-lg" name="group">
+		<summary>Can I get the frame and fork custom painted?</summary>
+		<p>
+			Yes you can.
+			<a href="/contact/">Contact me</a>
+			for pricing and turnaround time.
+		</p>
+	</details>
+	<details name="group">
+		<summary>Can I run a front derailleur?</summary>
+		<p>No, the bent seat tube skews the angle of the front derailleur. The Whippet design prioritizes tire clearance and off-road capability.</p>
+	</details>
+	<details name="group">
+		<summary>Can I run 650b wheels?</summary>
+		<p>
+			The two smallest frame sizes are designed for 650b wheels. All other sizes are designed for 700c wheels. Using 650b wheels on sizes M4 and up will put the pedals too low for safe ground clearance.
+		</p>
+	</details>
+	<details name="group">
+		<summary>What's the narrowest tire I can run?</summary>
+		<p>The minimum recommended tire width is 45 mm.</p>
+	</details>
+	<details name="group">
+		<summary>What's the max weight I can carry on the fork?</summary>
+		<p>The Seido MGV fork is designed for a max system weight of 140 kg (308 lbs). You can carry 20 kg (44 lbs) on a lowrider rack. You can carry 1.5 kg (3.3 lbs) per bottle cage eyelet.</p>
+	</details>
+	<details name="group">
+		<summary>How many headset spacers can I use?</summary>
+		<p>Seido limits the total headset spacer stack under the stem to 19mm.</p>
+		<p>
+			Additionally, Seido requires that you <strong>leave 5mm of steerer tube above the stem</strong>. Your Whippet will come with Seido's installation instructions. Please refer to those when cutting your steerer tube.
+		</p>
+	</details>
+	<details name="group">
+		<summary>Can I run a suspension fork on this frame?</summary>
+		<p>
+			Most gravel suspension forks with 30mm-40mm of travel will work. The taller fork length will slacken the seattube and headtube angles a bit, but not enough to dramatically change how the bike handles.
+		</p>
+	</details>
+	<details name="group">
+		<summary>Can you make me a steel fork instead?</summary>
+		<p>
+			The Whippet is designed specifically for the Seido MGV carbon fork with its tapered steerer. I think a large headtube and a skinny fork clash. But I'm happy to make you a bike similar to the Whippet with a skinny headtube and a matching steel fork. See the <a href="/bikes/custom/">custom option</a>.
+		</p>
+	</details>
+	<details>
+		<summary>Why name the bike the Whippet?</summary>
+		<p>
+			Whippets are one of the fastest dog breeds. They're slim and sleek and bred for absolute speed. My whippet Beasley is also a total character. The bike name is in honor of my best furry friend.
+		</p>
+	</details>
+	{% for item in faq %}
+	<details name="group">
+		<summary>{{ item.q }}</summary>
+		{{ item.a | safe }}
+	</details>
+	{% endfor %}
+</section>

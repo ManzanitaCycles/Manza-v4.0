@@ -1,0 +1,13 @@
+<section class="center flow-thru">
+	{% set quote = quotes | findByKey('name', 'Miguel O.') %} {% if quote %}
+	<figure>
+		<img src="{{ quote.img }}" alt="{{ quote.alt }}" />
+	</figure>
+	<blockquote class="highlight">
+		<p>&ldquo;{{ quote.text }}&rdquo;</p>
+		<footer>
+			<cite>{{ quote.name }}</cite>
+		</footer>
+	</blockquote>
+	{% endif %}
+</section>
