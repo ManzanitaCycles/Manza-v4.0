@@ -7,8 +7,9 @@
 	--fs-2xl: 2rem;
 
 	/* Font family */
-	--ff-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New",
-		monospace;
+	--ff-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono",
+		"Oxygen Mono", "Ubuntu Mono", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Consolas",
+		"Courier New", monospace;
 	--ff-serif: georgia, serif;
 
 	/* Font weight */
@@ -19,7 +20,7 @@
 	--s-base: 1rem;
 	--s-base-flow: 1.5em;
 	--s-lg: 1.5rem;
-	--s-2xl: clamp(5rem, 3rem + 8vw, 8rem);
+	--s-2xl: 8rem;
 
 	/* Colors */
 	--clr-100: hsl(0 0% 98%);
@@ -246,7 +247,7 @@ sup {
 	font-size: 0.75em;
 	line-height: 0;
 	vertical-align: super;
-	color: var(--clr-600);
+	color: var(--clr-400);
 }
 
 /* TABLES */
@@ -388,7 +389,7 @@ nav button::after {
 	content: "▼";
 	display: inline-block;
 	margin-inline-start: 0.25em;
-	font-size: 0.4em;
+	font-size: 0.75em;
 	vertical-align: middle;
 	transition: transform 0.3s ease;
 	color: var(--clr-400);
