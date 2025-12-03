@@ -9,7 +9,7 @@ module.exports = function (eleventyConfig) {
 
 	// Setup images
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-		formats: ["avif"],
+		formats: ["avif", "jpeg"],
 		widths: [480, 960, 1920],
 		filenameFormat: function (id, src, width, format, options) {
 			const extension = path.extname(src);
