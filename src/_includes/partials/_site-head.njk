@@ -3,10 +3,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	{% set pageTitle = metaTitle or title %} {% set siteTitle = site.name %} {% set currentUrl = (site.url + page.url) | lower %} {% set metaDesc = desc or summary or site.description %}
 	<title>
-		{% if pageTitle != siteTitle %}
-		{{ pageTitle }}
-		| {% endif %}
-		{{ siteTitle }}
+		{% if page.url == "/" %}
+			{{ site.name }} | {{ site.desc }}
+		{% else %}
+			{{ pageTitle }} | {{ site.name }}
+		{% endif %}
 	</title>
 	<link rel="canonical" href="{{ currentUrl }}" />
 	<meta name="description" content="{{ metaDesc }}" />
