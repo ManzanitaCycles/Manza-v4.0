@@ -1,28 +1,19 @@
+/* Typography */
 :root {
-	/* Font Sizes */
 	--fs-sm: 0.875rem;
 	--fs-base: 1rem;
 	--fs-lg: 1.125rem;
 	--fs-xl: 1.5rem;
 	--fs-2xl: 2rem;
-
-	/* Font family */
 	--ff-mono:
 		ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New",
 		monospace;
 	--ff-serif: georgia, serif;
-
-	/* Font weight */
 	--fw-bold: 700;
+}
 
-	/* Spacing */
-	--s-sm: 0.5rem;
-	--s-base: 1rem;
-	--s-base-flow: 1.5em;
-	--s-lg: 1.5rem;
-	--s-2xl: 8rem;
-
-	/* Colors */
+/* Colors */
+:root {
 	--clr-100: hsl(0 0% 98%);
 	--clr-200: hsl(0 0% 90%);
 	--clr-400: hsl(0 0% 63%);
@@ -32,14 +23,27 @@
 	--clr-error: #d32f2f;
 	--clr-error-bg: #fff0f0;
 	--clr-backdrop: rgb(0 0% 0% / 0.4);
+}
 
-	/* Borders */
+/* Spacing */
+:root {
+	--s-sm: 0.5rem;
+	--s-base: 1rem;
+	--s-base-flow: 1.5em;
+	--s-lg: 1.5rem;
+	--s-2xl: 8rem;
+}
+
+/* Borders */
+:root {
 	--border-w-thick: 6px;
 	--border-w-thin: 1px;
 	--border-thin: var(--border-w-thin) solid var(--clr-600);
 	--border-thick: var(--border-w-thick) solid var(--clr-200);
+}
 
-	/* Layout */
+/* Layout */
+:root {
 	--max-content: 34rem;
 	--max-feature: 60rem;
 	--photo-grid-min: 350px;
