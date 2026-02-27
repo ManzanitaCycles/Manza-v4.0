@@ -7,9 +7,9 @@
 	--fs-2xl: 2rem;
 
 	/* Font family */
-	--ff-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono",
-		"Oxygen Mono", "Ubuntu Mono", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Consolas",
-		"Courier New", monospace;
+	--ff-mono:
+		ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New",
+		monospace;
 	--ff-serif: georgia, serif;
 
 	/* Font weight */
@@ -28,6 +28,10 @@
 	--clr-400: hsl(0 0% 63%);
 	--clr-600: hsl(0 0% 33%);
 	--clr-800: hsl(0 0% 16%);
+	--clr-white: hsl(0 0% 100%);
+	--clr-error: #d32f2f;
+	--clr-error-bg: #fff0f0;
+	--clr-backdrop: rgb(0 0% 0% / 0.4);
 
 	/* Borders */
 	--border-w-thick: 6px;
@@ -38,6 +42,9 @@
 	/* Layout */
 	--max-content: 34rem;
 	--max-feature: 60rem;
+	--photo-grid-min: 350px;
+	--sidebar-basis-sm: 15rem;
+	--sidebar-basis-lg: 25rem;
 }
 
 /*************  RESET ******************/
@@ -147,7 +154,7 @@ details[open] summary::after {
 :where(input, textarea) {
 	border: var(--border-thin);
 	padding: var(--s-base);
-	background: #fff;
+	background: var(--clr-white);
 	margin-block-start: var(--s-sm);
 }
 
@@ -170,8 +177,8 @@ label {
 
 input:user-invalid,
 textarea:user-invalid {
-	border-color: #d32f2f;
-	background-color: #fff0f0;
+	border-color: var(--clr-error);
+	background-color: var(--clr-error-bg);
 }
 
 /* HEADINGS */
@@ -295,7 +302,7 @@ tbody tr td {
 .btn {
 	border: none;
 	background: var(--clr-600);
-	color: #fff;
+	color: var(--clr-white);
 	padding: var(--s-base);
 	display: inline-block;
 	text-transform: uppercase;
@@ -323,7 +330,7 @@ tbody tr td {
 
 .kit-builder label:has(input:checked) {
 	font-weight: var(--fw-bold);
-	background: #fff;
+	background: var(--clr-white);
 	border-color: var(--clr-600);
 }
 
@@ -376,7 +383,7 @@ nav button {
 }
 
 #nav-pop::backdrop {
-	background: rgb(0 0 0 / 0.4);
+	background: var(--clr-backdrop);
 }
 
 #nav-pop:popover-open {
@@ -421,7 +428,7 @@ body:has(#nav-pop:popover-open) nav button::after {
 .photo-grid {
 	display: grid;
 	gap: var(--s-lg);
-	grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(min(var(--photo-grid-min), 100%), 1fr));
 }
 
 .photo-grid img {
@@ -454,13 +461,13 @@ body:has(#nav-pop:popover-open) nav button::after {
 }
 
 .sidebar-sm div {
-	flex-basis: 15rem;
+	flex-basis: var(--sidebar-basis-sm);
 	flex-grow: 1;
 	width: 100%;
 }
 
 .sidebar figcaption {
-	flex-basis: 25rem;
+	flex-basis: var(--sidebar-basis-lg);
 	flex-grow: 1;
 	width: 100%;
 }
