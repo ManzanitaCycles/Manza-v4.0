@@ -1,0 +1,15 @@
+{% if quote %}
+<section class="center flow-thru">
+	<figure>
+		<img src="{{ quote.img }}" alt="{{ quote.alt }}" />
+		<figcaption class="highlight">
+			<blockquote>
+				<p>&ldquo;{{ quote.text }}&rdquo;</p>
+				<footer>
+					<cite>{{ quote.name }}</cite>
+				</footer>
+			</blockquote>
+		</figcaption>
+	</figure>
+</section>
+{% endif %}

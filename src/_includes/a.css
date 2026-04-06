@@ -22,7 +22,7 @@
 	--clr-white: hsl(0 0% 100%);
 	--clr-error: #d32f2f;
 	--clr-error-bg: #fff0f0;
-	--clr-backdrop: rgb(0 0% 0% / 0.4);
+	--clr-backdrop: rgb(0 0 0 / 0.4);
 }
 
 /* Spacing */
@@ -152,7 +152,6 @@ details[open] summary::after {
 
 :where(button, input, textarea) {
 	font: inherit;
-	width: 100%;
 }
 
 :where(input, textarea) {
@@ -160,6 +159,7 @@ details[open] summary::after {
 	padding: var(--s-base);
 	background: var(--clr-white);
 	margin-block-start: var(--s-sm);
+	width: 100%;
 }
 
 :focus-visible {
@@ -179,8 +179,8 @@ label {
 	color: var(--clr-600);
 }
 
-input:user-invalid,
-textarea:user-invalid {
+/* Add Error colors to invalid warnings */
+:where(input, textarea):user-invalid {
 	border-color: var(--clr-error);
 	background-color: var(--clr-error-bg);
 }
@@ -226,9 +226,17 @@ img {
 
 /* LISTS */
 
-ul,
-ol {
+:where(ul, ol) {
 	list-style: none;
+}
+
+ol {
+	counter-reset: list;
+	--list-marker: counter(list) ".";
+}
+
+ul:not([role]) {
+	--list-marker: "–";
 }
 
 :where(ul:not([role]), ol) li {
@@ -236,20 +244,13 @@ ol {
 	gap: var(--s-sm);
 }
 
-ul:not([role]) li::before {
-	content: "–";
-}
-ol {
-	counter-reset: list;
-}
-ol li {
-	counter-increment: list;
-}
-ol li::before {
-	content: counter(list) ".";
-}
-:where(ul:not([role]) li, ol li)::before {
+:where(ul:not([role]), ol) li::before {
+	content: var(--list-marker);
 	color: var(--clr-400);
+}
+
+ol li::before {
+	counter-increment: list;
 }
 
 /* SUPERSCRIPT */
@@ -284,13 +285,13 @@ tbody tr td {
 	padding-inline-start: var(--s-base);
 }
 
-.overflow-scroll {
+.overflow-auto {
 	overflow-x: auto;
 	padding-bottom: var(--s-sm);
 }
 
-.overflow-scroll thead th:first-child,
-.overflow-scroll tbody th {
+thead th:first-child,
+tbody th {
 	position: sticky;
 	left: 0;
 	z-index: 2;
@@ -445,29 +446,15 @@ body:has(#nav-pop:popover-open) nav button::after {
 }
 
 /* SIDEBAR */
-
-.sidebar,
-.sidebar-sm {
+.sidebar {
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--s-lg);
 	align-items: center;
 }
 
-.sidebar:nth-child(even) {
+.sidebar:nth-of-type(even) {
 	flex-direction: row-reverse;
-}
-
-.sidebar-sm figcaption {
-	flex-basis: 0;
-	flex-grow: 999;
-	min-inline-size: 50%;
-}
-
-.sidebar-sm div {
-	flex-basis: var(--sidebar-basis-sm);
-	flex-grow: 1;
-	width: 100%;
 }
 
 .sidebar figcaption {
@@ -553,26 +540,30 @@ body:has(#nav-pop:popover-open) nav button::after {
 	margin-block-start: var(--s-base-flow);
 }
 
+/* Layout components */
+.stack > * + * {
+	margin-block-start: var(--s-base);
+}
+.stack-sm > * + * {
+	margin-block-start: var(--s-sm);
+}
+.stack-2xl > * + * {
+	margin-block-start: var(--s-2xl);
+}
+
+/* One-off margin utilities */
 .mt-0 {
 	margin-block-start: 0;
 }
-
-.stack > * + *,
-.mt-base {
-	margin-block-start: var(--s-base);
-}
-
-.stack-sm > * + *,
 .mt-sm {
 	margin-block-start: var(--s-sm);
 }
-
-.stack-lg > * + *,
+.mt-base {
+	margin-block-start: var(--s-base);
+}
 .mt-lg {
 	margin-block-start: var(--s-lg);
 }
-
-.stack-2xl > * + *,
 .mt-2xl {
 	margin-block-start: var(--s-2xl);
 }
