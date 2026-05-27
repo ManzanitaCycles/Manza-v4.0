@@ -7,6 +7,9 @@ module.exports = function (eleventyConfig) {
 	// Passthrough assets
 	eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
+	// Add commas to the Whippet package calculator
+	eleventyConfig.addFilter("commas", (val) => val.toLocaleString());
+
 	// Setup images
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 		formats: ["avif", "jpeg"],
