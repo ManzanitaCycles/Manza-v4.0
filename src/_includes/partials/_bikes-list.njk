@@ -1,15 +1,13 @@
-<ul class="stack-2xl mt-2xl" role="list">
+<section class="stack-2xl mt-2xl center feature">
 	{% for bike in collections.bikes | sort(attribute='data.order') %}
-	<li>
-		<a href="{{ bike.url }}" class="no-decor block">
-			{% if loop.index0 === 0 %}
-			<img src="{{ bike.data.image }}" alt="{{ bike.data.alt }}" sizes="(min-width: 620px) 544px, 92vw" loading="eager" fetchpriority="high" />
-			{% else %}
-			<img src="{{ bike.data.image }}" alt="{{ bike.data.alt }}" sizes="(min-width: 620px) 544px, 92vw" />
-			{% endif %}
-			<h2 class="mt-base">{{ bike.data.title }}</h2>
-		</a>
-		<p class="muted mt-sm">{{ bike.data.desc }}</p>
-	</li>
+	<figure class="sidebar">
+			<div>
+				<a href="{{ bike.url }}" class="no-decor"><img src="{{ bike.data.image }}" alt="{{ bike.data.alt }}" sizes="(min-width: 1040px) 535px, (min-width: 880px) calc(79.29vw - 274px), calc(100vw - 32px)" /></a>
+			</div>
+			<figcaption>
+				<h2><a href="{{ bike.url }}" class="no-decor">{{ bike.data.title }}</a></h2>
+				<p class="muted mt-sm">{{ bike.data.desc }}</p>
+			</figcaption>
+		</figure>
 	{% endfor %}
-</ul>
+</section>

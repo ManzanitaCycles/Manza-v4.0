@@ -6,7 +6,7 @@
 
 <section class="center overline flow">
     <h2>Kit builder</h2>
-    <p>Select component bundles to estimate your build cost.</p>
+    <p>Select component bundles to estimate your component package cost.</p>
 
     <form
         class="kit-builder mt-lg flow"
@@ -34,7 +34,7 @@
 
         <!-- TOTAL SECTION -->
         <footer>
-            <h3>Estimated Total:
+            <h3>Component package:
                 $<output name="total">{{ starting_total }}</output>
             </h3>
         </footer>
@@ -84,10 +84,6 @@
         <summary>Cockpit details</summary>
         {% include "partials/_whippet-cockpit-details.njk" %}
     </details>
-    <details>
-        <summary>Drivetrain details</summary>
-        {% include "partials/_whippet-drivetrain-details.njk" %}
-    </details>
     </div>
-    <p class="fine-print">Pricing and parts subject to change. Saddle and pedals not included but can be added. Substitutions available.</p>
+    <p class="fine-print">Pricing and parts subject to change. Saddle and pedals not included but can be added. Substitutions available and encouraged!</p>
 </section>

@@ -1,58 +1,70 @@
 {
-  "Cockpit": [
-    {
-      "name": "Ritchey Comp",
-      "price": 195
-    },
-    {
-      "name": "Ritchey WCS",
-      "price": 329
-    },
-    {
-      "name": "Lightweight blend",
-      "price": 710
-    }
-  ],
-  "Drivetrain": [
-    {
-      "name": "Shimano GRX mechanical",
-      "price": 1273
-    },
-    {
-      "name": "Sram Rival/GX wireless",
-      "price": 1703
-    },
-    {
-      "name": "Sram Force/X0 wireless",
-      "price": 2399
-    }
-  ],
-  "Wheels": [
-    {
-      "name": "Hunt 4-Season Alloy Gravel",
-      "price": 451
-    },
-    {
-      "name": "Hunt 35 Carbon Gravel",
-      "price": 829
-    },
-    {
-      "name": "Reserve 40|44 GR",
-      "price": 1600
-    }
-  ],
-  "Tires": [
-    {
-      "name": "Continental Dubnital Race",
-      "price": 140
-    },
-    {
-      "name": "Schwalbe Rick Pro XC",
-      "price": 149
-    },
-    {
-      "name": "Vittoria Peyote XC Race",
-      "price": 166
-    }
-  ]
+	"Cockpit": [
+		{
+			"name": "Ritchey Comp",
+			"price": 195
+		},
+		{
+			"name": "Ritchey WCS",
+			"price": 329
+		},
+		{
+			"name": "Carbon blend",
+			"price": 710
+		}
+	],
+	"Drivetrain": [
+		{
+			"name": "Shimano GRX 820 mechanical",
+			"price": 1273
+		},
+		{
+			"name": "Sram Rival XPLR AXS",
+			"price": 1429
+		},
+		{
+			"name": "Sram Rival/GX AXS",
+			"price": 1672
+		},
+		{
+			"name": "Sram Force XPLR AXS",
+			"price": 1990
+		},
+		{
+			"name": "Sram Force/X0 AXS",
+			"price": 2369
+		},
+		{
+			"name": "Sram Red XPLR AXS",
+			"price": 3745
+		}
+	],
+	"Wheels": [
+		{
+			"name": "Astral Outback Approach Alloy",
+			"price": 701
+		},
+		{
+			"name": "Logos Epoché G2 Carbon",
+			"price": 1260
+		},
+		{
+			"name": "Enve G SES 4.5 Carbon",
+			"price": 2235
+		}
+	],
+	"Tires": [
+		{
+			"name": "Schwalbe G-One RS Pro",
+			"price": 140
+		},
+		{
+			"name": "Continental Dubnital",
+			"price": 146
+		},
+		{
+			"name": "Schwalbe Thunder Burt",
+			"price": 146
+		}
+	]
 }
