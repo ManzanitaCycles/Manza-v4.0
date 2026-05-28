@@ -6,6 +6,12 @@ const CleanCSS = require("clean-css");
 module.exports = function (eleventyConfig) {
 	// Passthrough assets
 	eleventyConfig.addPassthroughCopy("src/favicon.ico");
+	eleventyConfig.addPassthroughCopy("src/robots.txt");
+
+	// Add a date filter for the Sitemap
+	eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+		return dateObj.toISOString().split("T")[0];
+	});
 
 	// Add commas to the Whippet package calculator
 	eleventyConfig.addFilter("commas", (val) => val.toLocaleString());
