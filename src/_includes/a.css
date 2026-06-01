@@ -393,9 +393,6 @@ body:has(#nav-pop:popover-open) nav button::after {
 		margin-block-start: var(--s-base);
 		margin-inline-start: calc(var(--s-base) * -1);
 	}
-	#nav-pop::backdrop {
-		background: transparent;
-	}
 }
 
 /* PHOTO GRID */
