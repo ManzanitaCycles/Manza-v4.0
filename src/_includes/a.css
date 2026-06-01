@@ -5,9 +5,7 @@
 	--fs-lg: 1.125rem;
 	--fs-xl: 1.5rem;
 	--fs-2xl: 2rem;
-	--ff-mono:
-		ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New",
-		monospace;
+	--ff-mono: ui-monospace, monospace;
 	--ff-serif: georgia, serif;
 	--fw-bold: 700;
 	/* Colors */
@@ -213,31 +211,23 @@ img {
 
 /* LISTS */
 
-:where(ul, ol) {
+ul {
 	list-style: none;
 }
 
 ol {
-	counter-reset: list;
-	--list-marker: counter(list) ".";
+	list-style-position: inside;
+	padding-inline-start: 0;
 }
 
-ul:not([role]) {
-	--list-marker: "–";
-}
-
-:where(ul:not([role]), ol) li {
+ul:not([role]) li {
 	display: flex;
 	gap: var(--s-sm);
 }
 
-:where(ul:not([role]), ol) li::before {
-	content: var(--list-marker);
+ul:not([role]) li::before {
+	content: "–";
 	color: var(--clr-400);
-}
-
-ol li::before {
-	counter-increment: list;
 }
 
 /* SUPERSCRIPT */
@@ -246,7 +236,6 @@ sup {
 	font-size: 0.75em;
 	line-height: 0;
 	vertical-align: super;
-	color: var(--clr-400);
 }
 
 /* TABLES */
@@ -261,20 +250,15 @@ table {
 th,
 td {
 	padding-block: var(--s-sm);
+	padding-inline-start: var(--s-base);
 }
 
 tbody td {
 	color: var(--clr-600);
 }
 
-thead tr th:not(:first-child),
-tbody tr td {
-	padding-inline-start: var(--s-base);
-}
-
 .overflow-auto {
 	overflow-x: auto;
-	padding-bottom: var(--s-sm);
 }
 
 thead th:first-child,
@@ -285,6 +269,7 @@ tbody th {
 	background-color: var(--clr-100);
 	border-inline-end: 1px solid var(--clr-200);
 	padding-inline-end: var(--s-base);
+	padding-inline-start: 0;
 }
 
 /***************** Components ******************/
@@ -314,8 +299,7 @@ tbody th {
 }
 
 .kit-builder label {
-	border: var(--border-thin);
-	border-color: var(--clr-200);
+	border: 1px solid var(--clr-200);
 	padding: var(--s-lg);
 	line-height: 1.5;
 }
@@ -356,7 +340,6 @@ nav button {
 	border: none;
 	background: none;
 	text-transform: uppercase;
-	color: var(--clr-800);
 }
 
 #nav-pop {
@@ -523,7 +506,7 @@ body:has(#nav-pop:popover-open) nav button::after {
 /* VERTICAL SPACING */
 
 .flow > * + *,
-.flow-thru * + * {
+.flow-deep * + * {
 	margin-block-start: var(--s-base-flow);
 }
 
