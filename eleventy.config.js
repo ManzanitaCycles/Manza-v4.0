@@ -2,6 +2,8 @@ const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const path = require("path");
 const htmlmin = require("html-minifier-terser");
 const CleanCSS = require("clean-css");
+const { minify } = require("terser");
+const fs = require("fs");
 
 module.exports = function (eleventyConfig) {
 	// Passthrough assets
@@ -13,13 +15,16 @@ module.exports = function (eleventyConfig) {
 		return dateObj.toISOString().split("T")[0];
 	});
 
-	// Add commas to the Whippet package calculator
-	eleventyConfig.addFilter("commas", (val) => val.toLocaleString());
-
 	// Setup images
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-		formats: ["avif", "jpeg"],
-		widths: [480, 960, 1920],
+		formats: ["avif"],
+		widths: [320, 480, 620, 1088, 1920],
+		sharpOptions: {
+			avif: {
+				quality: 40,
+				effort: 6,
+			},
+		},
 		filenameFormat: function (id, src, width, format, options) {
 			const extension = path.extname(src);
 			const name = path.basename(src, extension);
@@ -40,6 +45,14 @@ module.exports = function (eleventyConfig) {
 			return null;
 		}
 		return array.find((item) => item[key] === value);
+	});
+
+	// Minify JS
+	eleventyConfig.on("eleventy.before", async () => {
+		const source = fs.readFileSync("src/js/kit-builder.js", "utf8");
+		const result = await minify(source);
+		fs.mkdirSync("public/js", { recursive: true });
+		fs.writeFileSync("public/js/kit-builder.js", result.code);
 	});
 
 	// Minify HTML

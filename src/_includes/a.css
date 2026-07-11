@@ -1,5 +1,5 @@
-/* Typography */
 :root {
+	/* Typography */
 	--fs-sm: 0.875rem;
 	--fs-base: 1rem;
 	--fs-lg: 1.125rem;
@@ -17,7 +17,7 @@
 	--clr-white: hsl(0 0% 100%);
 	--clr-error: #d32f2f;
 	--clr-error-bg: #fff0f0;
-	--clr-backdrop: rgb(0 0 0 / 0.4);
+	--clr-backdrop: rgb(0 0 0 / 0.2);
 	/* Spacing */
 	--s-sm: 0.5rem;
 	--s-base: 1rem;
@@ -33,8 +33,6 @@
 	--max-content: 34rem;
 	--max-feature: 60rem;
 	--photo-grid-min: 350px;
-	--sidebar-basis-sm: 15rem;
-	--sidebar-basis-lg: 25rem;
 }
 
 /*************  RESET ******************/
@@ -64,11 +62,11 @@ body {
 a {
 	color: inherit;
 	text-underline-offset: 0.25em;
+	text-decoration-color: var(--clr-400);
 }
 
-address,
-cite {
-	font-style: normal;
+a:hover {
+	text-decoration-color: var(--clr-800);
 }
 
 /* BLOCKQUOTES */
@@ -79,6 +77,7 @@ blockquote > p {
 }
 
 cite {
+	font-style: normal;
 	font-size: var(--fs-sm);
 	color: var(--clr-600);
 }
@@ -131,7 +130,7 @@ summary::after {
 }
 
 details[open] summary::after {
-	content: "–";
+	content: "\2212"; /* minus symbol */
 }
 
 /* FORMS */
@@ -282,8 +281,6 @@ tbody th {
 	color: var(--clr-white);
 	padding: var(--s-base);
 	display: inline-block;
-	text-transform: uppercase;
-	text-decoration: none;
 	letter-spacing: 0.1em;
 	font-weight: var(--fw-bold);
 }
@@ -329,70 +326,52 @@ header > a {
 	line-height: 0;
 }
 
-nav ul {
+nav {
 	display: flex;
 	gap: var(--s-lg);
 	font-weight: var(--fw-bold);
-	text-transform: uppercase;
 }
 
 nav button {
-	border: none;
-	background: none;
-	text-transform: uppercase;
-}
-
-#nav-pop {
-	border: var(--border-thin);
-	padding: var(--s-base);
-	margin: auto;
-}
-
-:where(#nav-pop, nav) a {
-	text-decoration: none;
-	text-transform: uppercase;
-}
-
-#nav-pop span {
-	text-transform: initial;
-}
-
-#nav-pop::backdrop {
-	background: var(--clr-backdrop);
-}
-
-#nav-pop:popover-open {
-	display: flex;
-	flex-direction: column;
-	gap: var(--s-base);
+	border: 0;
+	background: transparent;
+	anchor-name: --popover;
 }
 
 nav button::after {
-	content: "▼";
+	content: "\2193"; /* down arrow */
 	display: inline-block;
-	margin-inline-start: 0.25em;
-	font-size: 0.75em;
-	vertical-align: middle;
-	transition: transform 0.3s ease;
+	padding-inline-start: 0.25em;
+	font-size: var(--fs-sm);
 	color: var(--clr-400);
 }
 
-body:has(#nav-pop:popover-open) nav button::after {
-	transform: rotate(180deg);
+nav a,
+button,
+.btn,
+#pop a {
+	text-transform: uppercase;
+	text-decoration: none;
 }
 
-/* For browsers that support anchor positioning */
-@supports (position-anchor: auto) {
-	nav button {
-		anchor-name: --popover;
-	}
-	#nav-pop {
-		position-anchor: --popover;
-		top: anchor(bottom);
-		left: anchor(left);
-		margin-block-start: var(--s-base);
-		margin-inline-start: calc(var(--s-base) * -1);
-	}
+#pop {
+	border: var(--border-thin);
+	padding: var(--s-base);
+	position-anchor: --popover;
+	top: anchor(bottom);
+	left: anchor(left);
+	margin-block-start: var(--s-base);
+	margin-inline-start: calc(var(--s-base) * -1);
+}
+
+#pop::backdrop {
+	background: var(--clr-backdrop);
+}
+
+#pop:popover-open {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s-base);
 }
 
 /* PHOTO GRID */
@@ -420,20 +399,15 @@ body:has(#nav-pop:popover-open) nav button::after {
 	align-items: center;
 }
 
-.sidebar:nth-of-type(even) {
-	flex-direction: row-reverse;
-}
-
-.sidebar figcaption {
-	flex-basis: var(--sidebar-basis-lg);
+.sidebar > :first-child {
+	flex-basis: 34rem;
 	flex-grow: 1;
-	width: 100%;
 }
 
-.sidebar div {
+.sidebar > :last-child {
 	flex-basis: 0;
-	flex-grow: 999;
-	min-inline-size: 50%;
+	flex-grow: 9999;
+	min-inline-size: 33%;
 }
 
 /* SWITCHER */
@@ -469,14 +443,6 @@ body:has(#nav-pop:popover-open) nav button::after {
 	border: 0;
 }
 
-.block {
-	display: block;
-}
-
-.no-decor {
-	text-decoration: none;
-}
-
 /* DECORATIVE BORDERS */
 
 .highlight {
@@ -507,30 +473,24 @@ body:has(#nav-pop:popover-open) nav button::after {
 	margin-block-start: var(--s-base-flow);
 }
 
-/* Layout components */
-.stack > * + * {
-	margin-block-start: var(--s-base);
-}
-.stack-sm > * + * {
-	margin-block-start: var(--s-sm);
-}
-.stack-2xl > * + * {
-	margin-block-start: var(--s-2xl);
-}
-
-/* One-off margin utilities */
 .mt-0 {
 	margin-block-start: 0;
 }
-.mt-sm {
-	margin-block-start: var(--s-sm);
-}
+
+.stack > * + *,
 .mt-base {
 	margin-block-start: var(--s-base);
 }
+.stack-sm > * + *,
+.mt-sm {
+	margin-block-start: var(--s-sm);
+}
+
 .mt-lg {
 	margin-block-start: var(--s-lg);
 }
+
+.stack-2xl > * + *,
 .mt-2xl {
 	margin-block-start: var(--s-2xl);
 }

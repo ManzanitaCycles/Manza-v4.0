@@ -2,15 +2,13 @@
 	<h2>{{ featuresTitle }}</h2>
 	<div class="stack-2xl mt-lg">
 		{% for feature in features %}
-		<figure class="sidebar">
+		<div class="sidebar">
+			<img src="{{ feature.image }}" alt="{{ feature.alt }}" sizes="(min-width: 1480px) 535px, (min-width: 880px) calc(6.03vw + 447px), calc(100vw - 32px)" />
 			<div>
-				<img src="{{ feature.image }}" alt="{{ feature.alt }}" sizes="(min-width: 1040px) 535px, (min-width: 880px) calc(79.29vw - 274px), calc(100vw - 32px)" />
-			</div>
-			<figcaption>
 				<h3>{{ feature.title }}</h3>
 				<p class="muted mt-sm">{{ feature.desc }}</p>
-			</figcaption>
-		</figure>
+			</div>
+		</div>
 		{% endfor %}
 	</div>
 </section>

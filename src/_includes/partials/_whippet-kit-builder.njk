@@ -11,42 +11,14 @@
   <p>Select component bundles to estimate your complete bike cost.</p>
   <form
     class="kit-builder mt-lg flow"
-    oninput="
-      /* 2. INJECT STARTING TOTAL AS BASE */
-      const base = {{ starting_total }};
-      const frameset = {{ frameset_price }};
-
-      /* Dynamically create variables for each category */
-      {% for category_name, items in components %}
-        {% set safe_id = category_name | replace(' ', '_') | lower %}
-        const {{ safe_id }}_val = parseInt({{ safe_id }}.value) || 0;
-      {% endfor %}
-
-      // Calculate component package total (Base + Upgrade Deltas)
-      const components_result = base
-        {% for category_name, items in components %}
-          {% set safe_id = category_name | replace(' ', '_') | lower %}
-          + {{ safe_id }}_val
-        {% endfor %};
-
-      // Format with commas
-      const fmt = n => n.toLocaleString();
-
-      // Update both outputs
-      total.value = fmt(components_result);
-      bike_total.value = fmt(frameset + components_result);
-    "
+    data-base-price="{{ starting_total }}"
+    data-frameset-price="{{ frameset_price }}"
   >
-
     <!-- TOTAL SECTION -->
     <footer>
-      <p>Frame set: ${{ frameset_price | commas }}</p>
-      <p>Component package:
-        $<output name="total">{{ starting_total | commas }}</output>
-      </p>
-      <h3>Total:
-        $<output name="bike_total">{{ (frameset_price + starting_total) | commas }}</output>
-      </h3>
+      <p>Frame set: $<output name="frameset">{{ frameset_price }}</p>
+      <p>Component package: $<output name="total">{{ starting_total }}</output></p>
+      <h3>Total: $<output name="bike_total">{{ (frameset_price + starting_total) }}</output></h3>
     </footer>
 
     <!-- DYNAMIC CATEGORY LOOP -->
@@ -54,7 +26,7 @@
       {% set safe_id = category_name | replace(' ', '_') | lower %}
       {% set category_base_price = items[0].price %}
       <fieldset>
-        <legend class="fine-print">{{ category_name }}</legend>
+        <legend>{{ category_name }}</legend>
         <div class="switcher switcher-sm-col mt-sm">
           {% for item in items %}
             {% set price_diff = item.price - category_base_price %}
@@ -71,7 +43,7 @@
                 {% if price_diff == 0 %}
                   + $0
                 {% else %}
-                  + ${{ price_diff | commas }}
+                  + ${{ price_diff }}
                 {% endif %}
               </p>
             </label>
@@ -79,7 +51,6 @@
         </div>
       </fieldset>
     {% endfor %}
-
   </form>
 
   <div>

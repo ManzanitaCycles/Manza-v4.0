@@ -1,13 +1,11 @@
 <section class="stack-2xl mt-2xl center feature">
 	{% for bike in collections.bikes | sort(attribute='data.order') %}
-	<figure class="sidebar">
+		<article class="sidebar">
+			<a href="{{ bike.url }}"><img src="{{ bike.data.image }}" alt="{{ bike.data.alt }}" sizes="(min-width: 820px) 499px, calc(100vw - 32px)" loading="eager" fetchpriority="high" /></a>
 			<div>
-				<a href="{{ bike.url }}" class="no-decor"><img src="{{ bike.data.image }}" alt="{{ bike.data.alt }}" sizes="(min-width: 1040px) 535px, (min-width: 880px) calc(79.29vw - 274px), calc(100vw - 32px)" loading="eager" fetchpriority="high" /></a>
-			</div>
-			<figcaption>
-				<h2><a href="{{ bike.url }}" class="no-decor">{{ bike.data.title }}</a></h2>
+				<h2><a href="{{ bike.url }}">{{ bike.data.title }}</a></h2>
 				<p class="muted mt-sm">{{ bike.data.desc }}</p>
-			</figcaption>
-		</figure>
+			</div>
+		</article>
 	{% endfor %}
 </section>

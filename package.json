@@ -1,6 +1,6 @@
 {
-	"name": "manza-v4.0",
-	"version": "4.0.0",
+	"name": "manza-v4.3",
+	"version": "4.3.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
@@ -10,12 +10,11 @@
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"dependencies": {
-		"@11ty/eleventy": "^3.1.2",
-		"@11ty/eleventy-img": "^6.0.4"
-	},
 	"devDependencies": {
+		"@11ty/eleventy": "^3.1.6",
+		"@11ty/eleventy-img": "^6.0.4",
 		"clean-css": "^5.3.3",
-		"html-minifier-terser": "^7.2.0"
+		"html-minifier-terser": "^7.2.0",
+		"terser": "^5.49.0"
 	}
 }
