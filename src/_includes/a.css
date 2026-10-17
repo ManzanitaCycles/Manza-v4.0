@@ -153,7 +153,10 @@ details[open] summary::after {
 }
 
 textarea {
-	height: 10em;
+	min-height: 8lh;
+	max-height: 16lh;
+	field-sizing: content;
+	resize: none;
 }
 
 /* Make labels look better by default */
@@ -307,7 +310,7 @@ tbody th {
 	border-color: var(--clr-600);
 }
 
-.kit-builder label:has(:not(input:checked)):hover {
+.kit-builder label:not(:has(input:checked)):hover {
 	border-color: var(--clr-400);
 }
 
