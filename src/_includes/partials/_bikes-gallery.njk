@@ -1,0 +1,13 @@
+{# Hero gallery: the front matter `image` comes first, followed by the `photos` list #}
+{% set gallery = [{ src: image, alt: alt }].concat(photos) %}
+<div class="gallery">
+	{% for item in gallery %}
+	<input type="radio" name="hero-gallery" id="hero-photo-{{ loop.index }}"{% if loop.first %} checked{% endif %}>
+	<figure class="gallery-slide">
+		<img src="{{ item.src }}" alt="{{ item.alt }}" sizes="(min-width: 1060px) 960px, 93.51vw" {% if loop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+	</figure>
+	<label class="gallery-thumb" for="hero-photo-{{ loop.index }}">
+		<img src="{{ item.src }}" alt="View photo {{ loop.index }}" loading="lazy">
+	</label>
+	{% endfor %}
+</div>

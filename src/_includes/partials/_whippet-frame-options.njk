@@ -1,0 +1,14 @@
+<section class="center overline feature">
+	<h2>Frame options</h2>
+	<div class="switcher mt-lg">
+{% for option in frameOptions %}
+		<figure>
+			<img src="{{ option.img }}" alt="{{ option.alt }}" sizes="(min-width: 1060px) 304px, (min-width: 580px) 29.78vw, calc(100vw - 32px)" />
+			<figcaption>
+				<h3 class="mt-base">{{ option.name }}</h3>
+				<p class="mt-0">{{ option.txt }}</p>
+			</figcaption>
+		</figure>
+	{% endfor %}
+	</div>
+</section>

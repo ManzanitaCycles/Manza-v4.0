@@ -1,0 +1,253 @@
+{# Set a unique group name when including, e.g. {% set tabGroup = "specs" %} #}
+{% set group = tabGroup or "specs" %}
+<section class="tabs center overline">
+    <h2>Tech specs</h2>
+
+	<input type="radio" name="{{ group }}" id="{{ group }}1" checked>
+	<input type="radio" name="{{ group }}" id="{{ group }}2">
+	<input type="radio" name="{{ group }}" id="{{ group }}3">
+
+	<div class="tab-list mt-lg">
+		<label for="{{ group }}1">Geometry</label>
+		<label for="{{ group }}2">Frame specs</label>
+		<label for="{{ group }}3">Raw materials</label>
+	</div>
+
+	<div class="panels">
+
+		<div class="panel mt-lg">
+			<div class="overflow-auto">
+				<table class="table-num">
+					<thead>
+						<tr>
+							<th scope="col"></th>
+							<th scope="col">M3</th>
+							<th scope="col">M4</th>
+							<th scope="col">M5</th>
+							<th scope="col">M6</th>
+							<th scope="col">M7</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">Avg height</th>
+							<td>5'6"</td>
+							<td>5'8"</td>
+							<td>5'10"</td>
+							<td>6'0"</td>
+							<td>6'2"</td>
+						</tr>
+						<tr>
+							<th scope="row">Avg saddle height</th>
+							<td>700</td>
+							<td>725</td>
+							<td>750</td>
+							<td>775</td>
+							<td>800</td>
+						</tr>
+						<tr>
+							<th scope="row">Handlebar reach<sup>1</sup></th>
+							<td>445</td>
+							<td>455</td>
+							<td>466</td>
+							<td>478</td>
+							<td>490</td>
+						</tr>
+						<tr>
+							<th scope="row">Handlebar stack<sup>1</sup></th>
+							<td>605</td>
+							<td>625</td>
+							<td>646</td>
+							<td>665</td>
+							<td>683</td>
+						</tr>
+						<tr>
+							<th scope="row">Frame reach</th>
+							<td>380</td>
+							<td>390</td>
+							<td>400</td>
+							<td>412</td>
+							<td>424</td>
+						</tr>
+						<tr>
+							<th scope="row">Frame stack</th>
+							<td>551</td>
+							<td>572</td>
+							<td>593</td>
+							<td>612</td>
+							<td>631</td>
+						</tr>
+						<tr>
+							<th scope="row">Eff TT length</th>
+							<td>533</td>
+							<td>554</td>
+							<td>570</td>
+							<td>587</td>
+							<td>605</td>
+						</tr>
+						<tr>
+							<th scope="row">HT angle</th>
+							<td>69.5</td>
+							<td>70.0</td>
+							<td>70.5</td>
+							<td>70.5</td>
+							<td>70.5</td>
+						</tr>
+						<tr>
+							<th scope="row">HT length</th>
+							<td>100</td>
+							<td>120</td>
+							<td>140</td>
+							<td>160</td>
+							<td>180</td>
+						</tr>
+						<tr>
+							<th scope="row">ST angle<sup>2</sup></th>
+							<td>74.5</td>
+							<td>74.0</td>
+							<td>74.0</td>
+							<td>74.0</td>
+							<td>74.0</td>
+						</tr>
+						<tr>
+							<th scope="row">ST length<sup>3</sup></th>
+							<td>460</td>
+							<td>495</td>
+							<td>520</td>
+							<td>545</td>
+							<td>570</td>
+						</tr>
+						<tr>
+							<th scope="row">CS length</th>
+							<td>425</td>
+							<td>430</td>
+							<td>430</td>
+							<td>435</td>
+							<td>435</td>
+						</tr>
+						<tr>
+							<th scope="row">BB drop</th>
+							<td>81</td>
+							<td>81</td>
+							<td>81</td>
+							<td>81</td>
+							<td>81</td>
+						</tr>
+						<tr>
+							<th scope="row">BB height<sup>4</sup></th>
+							<td>285</td>
+							<td>285</td>
+							<td>285</td>
+							<td>285</td>
+							<td>285</td>
+						</tr>
+						<tr>
+							<th scope="row">Fork length</th>
+							<td>410</td>
+							<td>410</td>
+							<td>410</td>
+							<td>410</td>
+							<td>410</td>
+						</tr>
+						<tr>
+							<th scope="row">Fork offset</th>
+							<td>53</td>
+							<td>53</td>
+							<td>53</td>
+							<td>53</td>
+							<td>53</td>
+						</tr>
+						<tr>
+							<th scope="row">Wheelbase</th>
+							<td>1030</td>
+							<td>1052</td>
+							<td>1065</td>
+							<td>1087</td>
+							<td>1103</td>
+						</tr>
+						<tr>
+							<th scope="row">Trail<sup>4,5</sup></th>
+							<td>75</td>
+							<td>72</td>
+							<td>69</td>
+							<td>69</td>
+							<td>69</td>
+						</tr>
+						<tr>
+							<th scope="row">Standover<sup>4</sup></th>
+							<td>773</td>
+							<td>801</td>
+							<td>824</td>
+							<td>846</td>
+							<td>868</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="fine-print mt-lg stack-sm">
+				<p><sup>1</sup> With an 80 mm -6º stem and no spacers</p>
+				<p><sup>2</sup> Effective angle at average saddle height</p>
+				<p><sup>3</sup> Center to top</p>
+				<p><sup>4</sup> Measured with 55mm (2.2") tire</p>
+				<p><sup>5</sup> Mechanical trail</p>
+			</div>
+		</div>
+
+		<div class="panel mt-lg">
+			<dl>
+				<dt>Max tire width</dt>
+				<dd>2.25" (57 mm)</dd>
+				<dt>Front hub</dt>
+				<dd>12x100 mm</dd>
+				<dt>Rear hub</dt>
+				<dd>12x142 mm</dd>
+				<dt>Derailleur hanger</dt>
+				<dd>UDH / Sram Transmission</dd>
+				<dt>Chainline</dt>
+				<dd>47—49 mm</dd>
+				<dt>Min crank Q-factor</dt>
+				<dd>150 mm</dd>
+				<dt>Max chainring</dt>
+				<dd>46t</dd>
+				<dt>Brake type</dt>
+				<dd>Flat mount</dd>
+				<dt>Max front rotor</dt>
+				<dd>180 mm</dd>
+				<dt>Max rear rotor</dt>
+				<dd>160 mm</dd>
+				<dt>Seat post</dt>
+				<dd>27.2 mm</dd>
+				<dt>Seat post clamp</dt>
+				<dd>29.8—30.0 mm</dd>
+				<dt>Bottom bracket</dt>
+				<dd>68 mm BSA</dd>
+				<dt>Avg. weight size ML</dt>
+				<dd>1950 g</dd>
+			</dl>
+		</div>
+
+		<div class="panel mt-lg">
+			<dl>
+				<dt>Headtube</dt>
+				<dd>EC44/EC44 for fully internal frames, tapered EC34/EC44 for all other frames</dd>
+				<dt>Toptube</dt>
+				<dd>25.4 8/5/8 for size S, 28.6 8/5/8 for sizes M—L, 31.8 8/5/8 for size XL</dd>
+				<dt>Downtube</dt>
+				<dd>31.8 8/5/8 for size S, 34.9 8/5/8 for sizes M—ML, 34.9 1/8/5/8 for sizes L—XL</dd>
+				<dt>Seattube</dt>
+				<dd>29.8/28.6 1.2/6/8 for sizes S—ML, 29.8/28.6 1.2/6/9 for sizes L—XL</dd>
+				<dt>BB shell</dt>
+				<dd>68 mm threaded</dd>
+				<dt>Chainstays</dt>
+				<dd>4130 19x0.9 straight gauge custom bent in house</dd>
+				<dt>Seatstays</dt>
+				<dd>4130 12.7x0.9 straight gauge custom bent in house</dd>
+				<dt>Chainstay yoke</dt>
+				<dd>Custom 3d-printed heat-treated stainless steel</dd>
+				<dt>Dropouts</dt>
+				<dd>CNC-machined UDH/flat mount</dd>
+			</dl>
+		</div>
+
+	</div>
+</section>

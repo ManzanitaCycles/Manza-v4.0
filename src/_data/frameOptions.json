@@ -1,0 +1,20 @@
+[
+	{
+		"name": "Partially internal",
+		"img": "/img/whippetv2/internal-routing-port.jpg",
+		"alt": "Rear brake line goes into the down tube.",
+		"txt": "The rear brake runs internally through the down tube and externally under the chainstay. There are no unnecessary housing guides on the down tube and driveside chainstay. For wireless drivetrains only."
+	},
+	{
+		"name": "Fully internal",
+		"img": "/img/whippet-full-internal.jpg",
+		"alt": "Both brake lines run inside the frame.",
+		"txt": "Like most current road bikes, the brake lines are hidden inside the frame and fork. The rear brake line pokes out of the down tube and runs externally along the chainstay. For wireless drivetrains only."
+	},
+	{
+		"name": "External",
+		"img": "/img/whippet-external-routing.jpg",
+		"alt": "The brake and shifter lines run externally under the down tube.",
+		"txt": "Bolt-on housing guides run along the down tube and both chainstays to securely fasten your brake and derailleur lines. For mechanical or wireless drivetrains."
+	}
+]

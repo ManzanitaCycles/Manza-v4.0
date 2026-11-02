@@ -47,14 +47,6 @@ module.exports = function (eleventyConfig) {
 		return array.find((item) => item[key] === value);
 	});
 
-	// Minify JS
-	eleventyConfig.on("eleventy.before", async () => {
-		const source = fs.readFileSync("src/js/kit-builder.js", "utf8");
-		const result = await minify(source);
-		fs.mkdirSync("public/js", { recursive: true });
-		fs.writeFileSync("public/js/kit-builder.js", result.code);
-	});
-
 	// Minify HTML
 	eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
 		if (outputPath && outputPath.endsWith(".html")) {

@@ -1,0 +1,17 @@
+<section>
+	<div class="center feature">
+		{% include "partials/_bikes-gallery.njk" %}
+	</div>
+	<div class="center mt-lg flow">
+		<hgroup>
+			<p class="fine-print">{{ subTitle }}</p>
+			<h1 class="mt-0">{{ title }}</h1>
+		</hgroup>
+		<p class="muted">{{ desc }}</p>
+		<p>
+			<strong>{{ price }}</strong>
+		</p>
+		<p><a href="{{ depositLink }}" class="btn">Place deposit</a></p>
+		<p class="fine-print mt-sm">Secure your spot in the queue for {{ deposit }}.</p>
+	</div>
+</section>
